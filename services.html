@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="From A&R to global distribution, film, publishing, and brand partnerships — the full suite of Off-Limits Entertainment services.">
+    <meta name="theme-color" content="#050505">
+    <title>Services | Off-Limits Entertainment</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/Logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpg">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<div id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-outline" id="cursorOutline"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo">
+            <span class="brand-font fw-bold fs-4 d-none d-lg-inline">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="desktopNav">
+            <ul class="navbar-nav mx-auto gap-1 text-uppercase small fw-semibold">
+                <li class="nav-item"><a class="nav-link nav-hover" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="artists.html">Artists</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover current" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="media.html">Media</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+                <span class="abuja-clock d-none d-xl-flex" data-abuja-clock><i class="bi bi-geo-alt-fill"></i>Abuja, Nigeria</span>
+                <a href="account/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold d-none d-md-inline-block">My Account</a>
+                <a href="portal/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold">Artist Portal</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end bg-dark-glass text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo me-2">
+        <span class="brand-font fs-5 fw-bold">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <ul class="navbar-nav gap-2 text-uppercase fw-semibold fs-5">
+            <li><a class="nav-link py-2" href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+            <li><a class="nav-link py-2" href="about.html" data-bs-dismiss="offcanvas">About</a></li>
+            <li><a class="nav-link py-2" href="artists.html" data-bs-dismiss="offcanvas">Artists</a></li>
+            <li><a class="nav-link py-2 current" href="services.html" data-bs-dismiss="offcanvas">Services</a></li>
+            <li><a class="nav-link py-2" href="media.html" data-bs-dismiss="offcanvas">Media</a></li>
+            <li><a class="nav-link py-2" href="contact.html" data-bs-dismiss="offcanvas">Contact</a></li>
+        </ul>
+        <div class="d-flex flex-column gap-2 mt-4">
+            <span class="abuja-clock justify-content-center mb-2" data-abuja-clock><i class="bi bi-geo-alt-fill"></i>Abuja, Nigeria</span>
+            <a href="account/login.html" class="btn btn-outline-light text-uppercase fw-bold" data-bs-dismiss="offcanvas">My Account</a>
+            <a href="portal/login.html" class="btn btn-outline-light text-uppercase fw-bold" data-bs-dismiss="offcanvas">Artist Portal</a>
+        </div>
+    </div>
+</div>
+
+<header class="page-hero">
+    <div class="container">
+        <span class="section-eyebrow">What We Do</span>
+        <h1 class="section-title brand-font">Our <span class="accent-color">Services</span></h1>
+        <p class="section-body col-lg-6 mt-3">From raw talent to global icon — we provide every tool, connection, and platform you need to dominate the industry.</p>
+    </div>
+</header>
+
+<section class="section-dark py-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-music-note-list"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">A&R & Artist Development</h5>
+                    <p class="text-muted small mt-2">We scout, sign, and develop artists from the ground up. Our A&R team has an ear for the next wave before it breaks.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-broadcast"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Global Distribution</h5>
+                    <p class="text-muted small mt-2">Your music on every platform — Spotify, Apple Music, Tidal, Amazon, YouTube Music — with real-time analytics and royalty tracking.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-camera-reels"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Film & Visual Production</h5>
+                    <p class="text-muted small mt-2">Cinematic music videos, short films, and branded content. We tell stories that live beyond the song.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Marketing & Promotion</h5>
+                    <p class="text-muted small mt-2">Data-driven campaigns across social, digital, and traditional media. We build audiences that convert to lifelong fans.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-file-earmark-music"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Publishing & Licensing</h5>
+                    <p class="text-muted small mt-2">Protect and monetize your catalog. Sync licensing for film, TV, ads, and games — your music working for you 24/7.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-people-fill"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Brand Partnerships</h5>
+                    <p class="text-muted small mt-2">We connect artists with brands that align with their identity — from fashion collabs to tech endorsements and beyond.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="artists.html#demo" class="btn btn-accent px-5 py-3 text-uppercase fw-bold">Submit Your Demo</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MERCH ========== -->
+<section id="merch" class="section-darker py-section">
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-7" data-aos="fade-up">
+                <span class="section-eyebrow">Official Store</span>
+                <h2 class="section-title brand-font">Off-Limits <span class="accent-color">Merch</span></h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="merch-card">
+                    <div class="merch-img-wrap">
+                        <img src="assets/images/cloth.jpg" alt="OL Classic Tee" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="merch-overlay">
+                            <button class="btn btn-accent btn-sm text-uppercase fw-bold quick-add-btn">Quick Add</button>
+                        </div>
+                        <span class="merch-badge">New</span>
+                    </div>
+                    <div class="merch-info mt-3">
+                        <h6 class="fw-bold mb-0">OL Classic Tee</h6>
+                        <p class="small accent-color fw-semibold mb-0">$35.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="80">
+                <div class="merch-card">
+                    <div class="merch-img-wrap">
+                        <img src="assets/images/cloths.jpg" alt="Signal Lost Hoodie" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="merch-overlay">
+                            <button class="btn btn-accent btn-sm text-uppercase fw-bold quick-add-btn">Quick Add</button>
+                        </div>
+                        <span class="merch-badge merch-badge-hot">Hot</span>
+                    </div>
+                    <div class="merch-info mt-3">
+                        <h6 class="fw-bold mb-0">Signal Lost Hoodie</h6>
+                        <p class="small accent-color fw-semibold mb-0">$75.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="160">
+                <div class="merch-card">
+                    <div class="merch-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=500" alt="OL Cap" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="merch-overlay">
+                            <button class="btn btn-accent btn-sm text-uppercase fw-bold quick-add-btn">Quick Add</button>
+                        </div>
+                    </div>
+                    <div class="merch-info mt-3">
+                        <h6 class="fw-bold mb-0">Off-Limits Cap</h6>
+                        <p class="small accent-color fw-semibold mb-0">$28.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="240">
+                <div class="merch-card">
+                    <div class="merch-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500" alt="OL Sneaker Collab" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="merch-overlay">
+                            <button class="btn btn-accent btn-sm text-uppercase fw-bold quick-add-btn">Quick Add</button>
+                        </div>
+                        <span class="merch-badge merch-badge-limited">Limited</span>
+                    </div>
+                    <div class="merch-info mt-3">
+                        <h6 class="fw-bold mb-0">OL x Collab Sneaker</h6>
+                        <p class="small accent-color fw-semibold mb-0">$120.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="merchToast" class="alert alert-info text-center mt-4 d-none" style="border-radius:0;"></div>
+        <p class="text-center text-muted small mt-4">Full checkout is coming soon. <a href="store.html" class="accent-color">Learn more</a></p>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom py-4">
+            <p class="small text-muted mb-0">&copy; 2026 Off-Limits Entertainment. All Rights Reserved. Abuja, Nigeria.</p>
+            <p class="small text-muted mb-0"><i class="bi bi-geo-alt-fill accent-color me-1"></i><span data-abuja-clock>Abuja, Nigeria</span></p>
+            <a href="index.html" class="small text-muted">Back to Home</a>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/abuja-clock.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    document.querySelectorAll('.quick-add-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const toast = document.getElementById('merchToast');
+            toast.textContent = 'Checkout is coming soon — thanks for your interest!';
+            toast.classList.remove('d-none');
+            setTimeout(() => toast.classList.add('d-none'), 3000);
+        });
+    });
+</script>
+</body>
+</html>

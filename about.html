@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Off-Limits Entertainment is a full-service entertainment company based in Abuja, Nigeria — part record label, part creative agency, part cultural movement.">
+    <meta name="theme-color" content="#050505">
+    <title>About Us | Off-Limits Entertainment</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/Logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpg">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<div id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-outline" id="cursorOutline"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo">
+            <span class="brand-font fw-bold fs-4 d-none d-lg-inline">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="desktopNav">
+            <ul class="navbar-nav mx-auto gap-1 text-uppercase small fw-semibold">
+                <li class="nav-item"><a class="nav-link nav-hover" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover current" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="artists.html">Artists</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="media.html">Media</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+                <span class="abuja-clock d-none d-xl-flex" data-abuja-clock><i class="bi bi-geo-alt-fill"></i>Abuja, Nigeria</span>
+                <a href="account/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold d-none d-md-inline-block">My Account</a>
+                <a href="portal/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold">Artist Portal</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end bg-dark-glass text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo me-2">
+        <span class="brand-font fs-5 fw-bold">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <ul class="navbar-nav gap-2 text-uppercase fw-semibold fs-5">
+            <li><a class="nav-link py-2" href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+            <li><a class="nav-link py-2 current" href="about.html" data-bs-dismiss="offcanvas">About</a></li>
+            <li><a class="nav-link py-2" href="artists.html" data-bs-dismiss="offcanvas">Artists</a></li>
+            <li><a class="nav-link py-2" href="services.html" data-bs-dismiss="offcanvas">Services</a></li>
+            <li><a class="nav-link py-2" href="media.html" data-bs-dismiss="offcanvas">Media</a></li>
+            <li><a class="nav-link py-2" href="contact.html" data-bs-dismiss="offcanvas">Contact</a></li>
+        </ul>
+        <div class="d-flex flex-column gap-2 mt-4">
+            <span class="abuja-clock justify-content-center mb-2" data-abuja-clock><i class="bi bi-geo-alt-fill"></i>Abuja, Nigeria</span>
+            <a href="account/login.html" class="btn btn-outline-light text-uppercase fw-bold" data-bs-dismiss="offcanvas">My Account</a>
+            <a href="portal/login.html" class="btn btn-outline-light text-uppercase fw-bold" data-bs-dismiss="offcanvas">Artist Portal</a>
+        </div>
+    </div>
+</div>
+
+<header class="page-hero">
+    <div class="container">
+        <span class="section-eyebrow">Who We Are</span>
+        <h1 class="section-title brand-font">More Than A <span class="accent-color">Label.</span></h1>
+    </div>
+</header>
+
+<section class="section-dark py-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="about-img-stack">
+                    <img src="assets/images/photo_2_2026-05-16_07-20-49.jpg" alt="Off-Limits Artist" class="about-img-main img-fluid" loading="lazy" decoding="async">
+                    <div class="about-badge brand-font">
+                        <span class="accent-color display-6 fw-bold">6</span>
+                        <span class="small text-uppercase">Years<br>Breaking<br>Rules</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                <p class="section-body mt-4">
+                    Off-Limits Entertainment was born in Abuja, Nigeria from a refusal to accept the status quo. We are a full-service entertainment company — part record label, part creative agency, part cultural movement. Inspired by the blueprints of <strong>Roc Nation</strong>, <strong>88rising</strong>, and <strong>Top Dawg Entertainment</strong>, we've built a machine that doesn't just sign artists — it builds legacies.
+                </p>
+                <p class="section-body">
+                    From A&R and production to brand partnerships, touring, and film — every arm of Off-Limits is engineered to amplify your voice and expand your world.
+                </p>
+                <div class="row g-3 mt-4">
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-music-note-beamed accent-color me-2"></i>A&R & Signing</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-camera-video accent-color me-2"></i>Film & Visual</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-globe accent-color me-2"></i>Global Distribution</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-megaphone accent-color me-2"></i>Brand Partnerships</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-vinyl accent-color me-2"></i>Publishing Rights</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-calendar-event accent-color me-2"></i>Live Events</div>
+                    </div>
+                </div>
+                <a href="services.html" class="btn btn-accent mt-5 px-4 py-3 text-uppercase fw-bold">Our Full Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="marquee-divider">
+    <div class="marquee-inner">
+        <span>MUSIC &nbsp;✦&nbsp; CULTURE &nbsp;✦&nbsp; FILM &nbsp;✦&nbsp; FASHION &nbsp;✦&nbsp; LIVE EVENTS &nbsp;✦&nbsp; PUBLISHING &nbsp;✦&nbsp; BRAND DEALS &nbsp;✦&nbsp; STREAMING &nbsp;✦&nbsp;</span>
+        <span>MUSIC &nbsp;✦&nbsp; CULTURE &nbsp;✦&nbsp; FILM &nbsp;✦&nbsp; FASHION &nbsp;✦&nbsp; LIVE EVENTS &nbsp;✦&nbsp; PUBLISHING &nbsp;✦&nbsp; BRAND DEALS &nbsp;✦&nbsp; STREAMING &nbsp;✦&nbsp;</span>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom py-4">
+            <p class="small text-muted mb-0">&copy; 2026 Off-Limits Entertainment. All Rights Reserved. Abuja, Nigeria.</p>
+            <p class="small text-muted mb-0"><i class="bi bi-geo-alt-fill accent-color me-1"></i><span data-abuja-clock>Abuja, Nigeria</span></p>
+            <a href="index.html" class="small text-muted">Back to Home</a>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/abuja-clock.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

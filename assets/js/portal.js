@@ -1,13 +1,14 @@
 /**
- * OFF-LIMITS ENTERTAINMENT — Artist Portal shared logic
+ * OFF-LIMITS ENTERTAINMENT — Artist/Staff Portal shared logic
  * Requires supabase-config.js + supabase-client.js loaded first.
  */
 'use strict';
 
 /**
  * Guards a portal page: redirects to login if there's no active Supabase
- * session, otherwise resolves the signed-in user's artist profile.
- * Returns { user, profile, artist } or redirects and never resolves.
+ * session, otherwise resolves the signed-in staff member's profile, role,
+ * and (for managers) the list of artist IDs they manage.
+ * Returns { user, profile, role, artist, managedArtistIds } or redirects.
  */
 async function requirePortalAuth() {
     if (!supabaseClient) {
@@ -32,14 +33,31 @@ async function requirePortalAuth() {
         return new Promise(() => {});
     }
 
+    let managedArtistIds = [];
+    if (profile.role === 'manager') {
+        const { data: assignments } = await supabaseClient
+            .from('manager_artists').select('artist_id').eq('manager_id', session.user.id);
+        managedArtistIds = (assignments || []).map(a => a.artist_id);
+    }
+
     document.querySelectorAll('[data-artist-name]').forEach(el => {
         el.textContent = profile.artists?.name || profile.username;
     });
     document.querySelectorAll('[data-current-date]').forEach(el => {
         el.textContent = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     });
+    document.querySelectorAll('[data-role-badge]').forEach(el => {
+        el.textContent = profile.role.charAt(0).toUpperCase() + profile.role.slice(1);
+    });
 
-    return { user: session.user, profile, artist: profile.artists };
+    // Show/hide sidebar links and page sections based on role.
+    // Add data-roles="admin,manager" to any element that should only show for those roles.
+    document.querySelectorAll('[data-roles]').forEach(el => {
+        const allowed = el.getAttribute('data-roles').split(',').map(r => r.trim());
+        if (!allowed.includes(profile.role)) el.remove();
+    });
+
+    return { user: session.user, profile, role: profile.role, artist: profile.artists, managedArtistIds };
 }
 
 function initPortalChrome() {

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+    <title>Manage Events & Releases — Off-Limits Artist Portal</title>
+    <link rel="icon" type="image/jpeg" href="../assets/images/Logo.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/portal.css">
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+        <a href="../index.html" class="text-decoration-none d-flex align-items-center gap-2">
+            <img src="../assets/images/Logo.jpg" alt="Off-Limits Entertainment" style="height:32px;width:auto;border-radius:3px;">
+            <span class="brand-font text-white" style="font-size:0.9rem;">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        </a>
+        <p class="text-muted mb-0 mt-1" style="font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;">Artist Portal</p>
+    </div>
+    <nav class="sidebar-nav">
+        <a href="dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a>
+        <a href="releases.html" data-roles="artist"><i class="bi bi-vinyl-fill"></i> My Releases</a>
+        <a href="media.html" data-roles="artist"><i class="bi bi-collection-play-fill"></i> My Media</a>
+        <a href="events.html" data-roles="artist"><i class="bi bi-calendar-event-fill"></i> Upcoming Events</a>
+        <a href="manage-events.html" class="active" data-roles="admin,manager"><i class="bi bi-calendar2-week-fill"></i> Manage Events &amp; Releases</a>
+        <a href="analytics.html" data-roles="artist"><i class="bi bi-bar-chart-fill"></i> Analytics</a>
+        <a href="royalties.html" data-roles="artist"><i class="bi bi-cash-stack"></i> Royalties</a>
+        <a href="profile.html" data-roles="artist"><i class="bi bi-person-fill"></i> My Profile</a>
+        <a href="team-chat.html"><i class="bi bi-people-fill"></i> Team Chat</a>
+        <a href="messages.html" data-roles="admin"><i class="bi bi-chat-dots-fill"></i> Fan Inbox</a>
+        <a href="demos.html" data-roles="admin"><i class="bi bi-music-note-list"></i> Demo Submissions</a>
+    </nav>
+    <div class="sidebar-footer">
+        <a href="#" id="portalLogout" class="d-flex align-items-center gap-2 text-muted text-decoration-none" style="font-size:0.85rem;">
+            <i class="bi bi-box-arrow-left"></i> Sign Out
+        </a>
+    </div>
+</aside>
+
+<main class="main-content">
+    <div class="topbar">
+        <div class="d-flex align-items-center gap-3">
+            <button class="sidebar-toggle-btn" id="sidebarToggle"><i class="bi bi-list"></i></button>
+            <div>
+                <h4 class="brand-font mb-0" style="font-size:1rem;">Manage Events &amp; Releases</h4>
+                <p class="text-muted small mb-0">Welcome back, <span class="accent-color" data-artist-name>Artist</span></p>
+            </div>
+        </div>
+        <a href="../index.html" class="btn btn-sm btn-outline-secondary" style="border-radius:0;font-size:0.7rem;letter-spacing:1px;text-transform:uppercase;">
+            <i class="bi bi-globe me-1"></i>View Site
+        </a>
+    </div>
+
+    <div id="noAccessMsg" class="portal-placeholder d-none">
+        <i class="bi bi-shield-lock-fill"></i>
+        <h5 class="brand-font mt-3 mb-2" style="font-size:0.9rem;">Admin &amp; Manager Access Only</h5>
+        <p class="text-muted small">This page is for label staff and artist managers.</p>
+    </div>
+
+    <div id="manageArea" class="d-none">
+        <ul class="nav nav-tabs mb-4" style="border-color:rgba(255,255,255,0.07);">
+            <li class="nav-item"><button class="nav-link active" id="tabEvents" style="background:transparent;color:#fff;border-color:rgba(255,255,255,0.07) rgba(255,255,255,0.07) transparent;">Events</button></li>
+            <li class="nav-item"><button class="nav-link" id="tabReleases" style="background:transparent;color:#888;border:none;">Release Dates</button></li>
+        </ul>
+
+        <!-- EVENTS PANE -->
+        <div id="eventsPane">
+            <form id="eventForm" class="row g-2 align-items-end mb-4">
+                <div class="col-md-3">
+                    <label class="portal-label">Artist</label>
+                    <select class="form-select portal-input" id="eventArtist" required></select>
+                </div>
+                <div class="col-md-3">
+                    <label class="portal-label">Event Title</label>
+                    <input type="text" class="form-control portal-input" id="eventTitle" required placeholder="Show name">
+                </div>
+                <div class="col-md-2">
+                    <label class="portal-label">Venue</label>
+                    <input type="text" class="form-control portal-input" id="eventVenue" required>
+                </div>
+                <div class="col-md-2">
+                    <label class="portal-label">City / Country</label>
+                    <input type="text" class="form-control portal-input" id="eventCity" required placeholder="City, Country">
+                </div>
+                <div class="col-md-1">
+                    <label class="portal-label">Date</label>
+                    <input type="date" class="form-control portal-input" id="eventDate" required>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="portal-btn-accent w-100" style="padding:0.6rem;"><i class="bi bi-plus-lg"></i></button>
+                </div>
+            </form>
+            <div id="eventMsg" class="alert d-none" style="border-radius:0;"></div>
+            <div class="table-responsive">
+                <table class="table portal-table">
+                    <thead><tr><th>Artist</th><th>Event</th><th>Venue</th><th>Location</th><th>Date</th><th>Status</th><th></th></tr></thead>
+                    <tbody id="eventsBody"><tr><td colspan="7" class="text-center text-muted py-4">Loading…</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- RELEASES PANE -->
+        <div id="releasesPane" class="d-none">
+            <form id="releaseForm" class="row g-2 align-items-end mb-4">
+                <div class="col-md-3">
+                    <label class="portal-label">Artist</label>
+                    <select class="form-select portal-input" id="releaseArtist" required></select>
+                </div>
+                <div class="col-md-3">
+                    <label class="portal-label">Title</label>
+                    <input type="text" class="form-control portal-input" id="releaseTitle" required>
+                </div>
+                <div class="col-md-2">
+                    <label class="portal-label">Type</label>
+                    <select class="form-select portal-input" id="releaseType">
+                        <option value="single">Single</option>
+                        <option value="ep">EP</option>
+                        <option value="album">Album</option>
+                        <option value="mixtape">Mixtape</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="portal-label">Release Date</label>
+                    <input type="date" class="form-control portal-input" id="releaseDate" required>
+                </div>
+                <div class="col-md-1">
+                    <button type="submit" class="portal-btn-accent w-100" style="padding:0.6rem;"><i class="bi bi-plus-lg"></i></button>
+                </div>
+            </form>
+            <div id="releaseMsg" class="alert d-none" style="border-radius:0;"></div>
+            <div class="table-responsive">
+                <table class="table portal-table">
+                    <thead><tr><th>Artist</th><th>Title</th><th>Type</th><th>Release Date</th><th></th></tr></thead>
+                    <tbody id="releasesBody"><tr><td colspan="5" class="text-center text-muted py-4">Loading…</td></tr></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../assets/js/supabase-config.js"></script>
+<script src="../assets/js/supabase-client.js"></script>
+<script src="../assets/js/portal.js"></script>
+<script>
+(async () => {
+    const { role, managedArtistIds } = await requirePortalAuth();
+
+    if (role !== 'admin' && role !== 'manager') {
+        document.getElementById('noAccessMsg').classList.remove('d-none');
+        return;
+    }
+    document.getElementById('manageArea').classList.remove('d-none');
+
+    // Tabs
+    const tabEvents = document.getElementById('tabEvents');
+    const tabReleases = document.getElementById('tabReleases');
+    const eventsPane = document.getElementById('eventsPane');
+    const releasesPane = document.getElementById('releasesPane');
+    tabEvents.addEventListener('click', () => {
+        tabEvents.classList.add('active'); tabEvents.style.color = '#fff';
+        tabReleases.classList.remove('active'); tabReleases.style.color = '#888';
+        eventsPane.classList.remove('d-none'); releasesPane.classList.add('d-none');
+    });
+    tabReleases.addEventListener('click', () => {
+        tabReleases.classList.add('active'); tabReleases.style.color = '#fff';
+        tabEvents.classList.remove('active'); tabEvents.style.color = '#888';
+        releasesPane.classList.remove('d-none'); eventsPane.classList.add('d-none');
+    });
+
+    // Load relevant artists (admin = all, manager = managed only)
+    let artistsQuery = supabaseClient.from('artists').select('id, name, genre').order('name');
+    if (role === 'manager') {
+        artistsQuery = artistsQuery.in('id', managedArtistIds.length ? managedArtistIds : [-1]);
+    }
+    const { data: artists } = await artistsQuery;
+    const artistOptions = (artists || []).map(a => `<option value="${a.id}">${a.name}</option>`).join('');
+    document.getElementById('eventArtist').innerHTML = artistOptions || '<option disabled>No artists assigned</option>';
+    document.getElementById('releaseArtist').innerHTML = artistOptions || '<option disabled>No artists assigned</option>';
+
+    const artistIdsInScope = (artists || []).map(a => a.id);
+    const artistNameById = Object.fromEntries((artists || []).map(a => [a.id, a.name]));
+
+    // ---- Events ----
+    async function loadEvents() {
+        const body = document.getElementById('eventsBody');
+        if (!artistIdsInScope.length) {
+            body.innerHTML = '<tr><td colspan="7" class="text-center text-muted py-4">No artists assigned yet.</td></tr>';
+            return;
+        }
+        const { data } = await supabaseClient
+            .from('events').select('*').in('artist_id', artistIdsInScope).order('event_date');
+        body.innerHTML = (data && data.length) ? data.map(e => `
+            <tr>
+                <td>${artistNameById[e.artist_id] || '—'}</td>
+                <td>${e.title}</td>
+                <td>${e.venue}</td>
+                <td>${e.city}, ${e.country}</td>
+                <td>${e.event_date}</td>
+                <td>${e.is_sold_out ? '<span style="color:#ef4444;">Sold Out</span>' : '<span style="color:#22c55e;">Available</span>'}</td>
+                <td><button class="btn btn-sm btn-outline-danger delete-event-btn" data-id="${e.id}"><i class="bi bi-trash"></i></button></td>
+            </tr>
+        `).join('') : '<tr><td colspan="7" class="text-center text-muted py-4">No events yet.</td></tr>';
+
+        body.querySelectorAll('.delete-event-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                if (!confirm('Delete this event?')) return;
+                await supabaseClient.from('events').delete().eq('id', btn.dataset.id);
+                await loadEvents();
+            });
+        });
+    }
+    await loadEvents();
+
+    document.getElementById('eventForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const msg = document.getElementById('eventMsg');
+        const cityCountry = document.getElementById('eventCity').value.split(',').map(s => s.trim());
+        const { error } = await supabaseClient.from('events').insert({
+            artist_id: document.getElementById('eventArtist').value,
+            title: document.getElementById('eventTitle').value,
+            venue: document.getElementById('eventVenue').value,
+            city: cityCountry[0] || '',
+            country: cityCountry[1] || '',
+            event_date: document.getElementById('eventDate').value,
+        });
+        msg.classList.remove('d-none', 'alert-success', 'alert-danger');
+        if (error) {
+            msg.classList.add('alert-danger');
+            msg.textContent = 'Failed to add event. Please try again.';
+        } else {
+            msg.classList.add('alert-success');
+            msg.textContent = 'Event added.';
+            e.target.reset();
+            await loadEvents();
+        }
+    });
+
+    // ---- Releases ----
+    async function loadReleases() {
+        const body = document.getElementById('releasesBody');
+        if (!artistIdsInScope.length) {
+            body.innerHTML = '<tr><td colspan="5" class="text-center text-muted py-4">No artists assigned yet.</td></tr>';
+            return;
+        }
+        const { data } = await supabaseClient
+            .from('releases').select('*').in('artist_id', artistIdsInScope).order('release_date', { ascending: false });
+        body.innerHTML = (data && data.length) ? data.map(r => `
+            <tr>
+                <td>${artistNameById[r.artist_id] || '—'}</td>
+                <td>${r.title}</td>
+                <td class="text-capitalize">${r.type}</td>
+                <td>${r.release_date}</td>
+                <td><button class="btn btn-sm btn-outline-danger delete-release-btn" data-id="${r.id}"><i class="bi bi-trash"></i></button></td>
+            </tr>
+        `).join('') : '<tr><td colspan="5" class="text-center text-muted py-4">No releases yet.</td></tr>';
+
+        body.querySelectorAll('.delete-release-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                if (!confirm('Delete this release?')) return;
+                await supabaseClient.from('releases').delete().eq('id', btn.dataset.id);
+                await loadReleases();
+            });
+        });
+    }
+    await loadReleases();
+
+    document.getElementById('releaseForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const msg = document.getElementById('releaseMsg');
+        const { error } = await supabaseClient.from('releases').insert({
+            artist_id: document.getElementById('releaseArtist').value,
+            title: document.getElementById('releaseTitle').value,
+            type: document.getElementById('releaseType').value,
+            release_date: document.getElementById('releaseDate').value,
+        });
+        msg.classList.remove('d-none', 'alert-success', 'alert-danger');
+        if (error) {
+            msg.classList.add('alert-danger');
+            msg.textContent = 'Failed to add release. Please try again.';
+        } else {
+            msg.classList.add('alert-success');
+            msg.textContent = 'Release added.';
+            e.target.reset();
+            await loadReleases();
+        }
+    });
+})();
+</script>
+</body>
+</html>

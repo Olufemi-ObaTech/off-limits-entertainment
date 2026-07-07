@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the Off-Limits Entertainment roster and submit your demo for A&R review.">
+    <meta name="theme-color" content="#050505">
+    <title>Artists & Demo Submissions | Off-Limits Entertainment</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/Logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpg">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<div id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-outline" id="cursorOutline"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo">
+            <span class="brand-font fw-bold fs-4 d-none d-lg-inline">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="desktopNav">
+            <ul class="navbar-nav mx-auto gap-1 text-uppercase small fw-semibold">
+                <li class="nav-item"><a class="nav-link nav-hover" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover current" href="artists.html">Artists</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="media.html">Media</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+                <span class="abuja-clock d-none d-xl-flex" data-abuja-clock><i class="bi bi-geo-alt-fill"></i>Abuja, Nigeria</span>
+                <a href="account/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold d-none d-md-inline-block">My Account</a>
+                <a href="portal/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold">Artist Portal</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end bg-dark-glass text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo me-2">
+        <span class="brand-font fs-5 fw-bold">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <ul class="navbar-nav gap-2 text-uppercase fw-semibold fs-5">
+            <li><a class="nav-link py-2" href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+            <li><a class="nav-link py-2" href="about.html" data-bs-dismiss="offcanvas">About</a></li>
+            <li><a class="nav-link py-2 current" href="artists.html" data-bs-dismiss="offcanvas">Artists</a></li>
+            <li><a class="nav-link py-2" href="services.html" data-bs-dismiss="offcanvas">Services</a></li>
+            <li><a class="nav-link py-2" href="media.html" data-bs-dismiss="offcanvas">Media</a></li>
+            <li><a class="nav-link py-2" href="contact.html" data-bs-dismiss="offcanvas">Contact</a></li>
+        </ul>
+        <div class="d-flex flex-column gap-2 mt-4">
+            <span class="abuja-clock justify-content-center mb-2" data-abuja-clock><i class="bi bi-geo-alt-fill"></i>Abuja, Nigeria</span>
+            <a href="account/login.html" class="btn btn-outline-light text-uppercase fw-bold" data-bs-dismiss="offcanvas">My Account</a>
+            <a href="portal/login.html" class="btn btn-outline-light text-uppercase fw-bold" data-bs-dismiss="offcanvas">Artist Portal</a>
+        </div>
+    </div>
+</div>
+
+<header class="page-hero">
+    <div class="container">
+        <span class="section-eyebrow">The Family</span>
+        <h1 class="section-title brand-font">Global <span class="accent-color">Roster</span></h1>
+    </div>
+</header>
+
+<section class="section-dark py-section">
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-7" data-aos="fade-up">
+                <p class="section-body mb-0">Every artist here was signed because they refuse to sound like anyone else.</p>
+            </div>
+            <div class="col-lg-5 text-lg-end" data-aos="fade-up" data-aos-delay="100">
+                <div class="genre-filter d-flex flex-wrap gap-2 justify-content-lg-end mt-3 mt-lg-0">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="hiphop">Hip-Hop</button>
+                    <button class="filter-btn" data-filter="rnb">R&amp;B</button>
+                    <button class="filter-btn" data-filter="electronic">Electronic</button>
+                    <button class="filter-btn" data-filter="afrobeats">Afrobeats</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4" id="artistGrid">
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="hiphop" data-aos="fade-up" data-aos-delay="0">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/img3.jpg" alt="Vandal X" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=vandal-x" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Vandal X</h5>
+                        <p class="small accent-color mb-0">Hip-Hop / Alternative</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="electronic" data-aos="fade-up" data-aos-delay="80">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600" alt="Luna Eclipse" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=luna-eclipse" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Luna Eclipse</h5>
+                        <p class="small accent-color mb-0">Electronic Pop</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="rnb" data-aos="fade-up" data-aos-delay="160">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/photo_2_2026-05-16_07-20-49.jpg" alt="Aria Vance" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=aria-vance" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Aria Vance</h5>
+                        <p class="small accent-color mb-0">R&amp;B / Soul</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="afrobeats" data-aos="fade-up" data-aos-delay="240">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=600" alt="Kxng Dayo" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=kxng-dayo" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Kxng Dayo</h5>
+                        <p class="small accent-color mb-0">Afrobeats / Dancehall</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="hiphop" data-aos="fade-up" data-aos-delay="0">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=600" alt="Phantom" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=phantom" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Phantom</h5>
+                        <p class="small accent-color mb-0">Trap / Dark Hip-Hop</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="rnb" data-aos="fade-up" data-aos-delay="80">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/img5.jpg" alt="Zara Nox" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=zara-nox" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Zara Nox</h5>
+                        <p class="small accent-color mb-0">Neo-Soul / R&amp;B</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="electronic" data-aos="fade-up" data-aos-delay="160">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/img2.jpg" alt="Neon Drift" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=neon-drift" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Neon Drift</h5>
+                        <p class="small accent-color mb-0">Electronic / Synthwave</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="afrobeats" data-aos="fade-up" data-aos-delay="240">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/img1.jpg" alt="Soleil" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=soleil" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Soleil</h5>
+                        <p class="small accent-color mb-0">Afropop / World</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== RELEASES ========== -->
+<section id="releases" class="section-darker py-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8" data-aos="fade-up">
+                <span class="section-eyebrow">Fresh Off The Press</span>
+                <h2 class="section-title brand-font">Latest <span class="accent-color">Releases</span></h2>
+            </div>
+        </div>
+
+        <div class="featured-release mb-5" data-aos="fade-up">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-5">
+                    <div class="release-cover-wrap">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800" alt="Signal Lost Album Cover" class="img-fluid release-cover" loading="lazy" decoding="async">
+                        <div class="release-play-btn" id="featuredPlayBtn">
+                            <i class="bi bi-play-fill fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 p-4 p-lg-5">
+                    <span class="badge-pill-accent mb-3">Featured Release</span>
+                    <h3 class="brand-font fw-bold fs-2">Signal Lost</h3>
+                    <p class="accent-color fw-semibold mb-1">Vandal X</p>
+                    <p class="text-muted small mb-4">Album &nbsp;·&nbsp; 14 Tracks &nbsp;·&nbsp; Released May 2026</p>
+                    <p class="section-body">A raw, unfiltered journey through the noise of modern life. Vandal X's debut album blends alternative hip-hop with cinematic production — a statement record for a generation that refuses to be silenced.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#" class="btn btn-accent px-4 py-2 text-uppercase fw-bold"><i class="bi bi-spotify me-2"></i>Spotify</a>
+                        <a href="#" class="btn btn-ghost px-4 py-2 text-uppercase fw-bold"><i class="bi bi-apple me-2"></i>Apple Music</a>
+                        <a href="#" class="btn btn-ghost px-4 py-2 text-uppercase fw-bold"><i class="bi bi-youtube me-2"></i>YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=400" alt="Midnight Frequency" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="release-thumb-overlay"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">Midnight Frequency</h6>
+                        <p class="small text-muted mb-0">Aria Vance &nbsp;·&nbsp; Single</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="80">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=400" alt="Neon Pulse EP" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="release-thumb-overlay"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">Neon Pulse EP</h6>
+                        <p class="small text-muted mb-0">Luna Eclipse &nbsp;·&nbsp; EP</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="160">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=400" alt="Lagos to London" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="release-thumb-overlay"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">Lagos to London</h6>
+                        <p class="small text-muted mb-0">Kxng Dayo &nbsp;·&nbsp; Album</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="240">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=400" alt="Dark Matter" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="release-thumb-overlay"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">Dark Matter</h6>
+                        <p class="small text-muted mb-0">Phantom &nbsp;·&nbsp; Mixtape</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="music-player-bar mt-5" id="musicPlayer" data-aos="fade-up">
+            <div class="d-flex align-items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=80" alt="Now Playing" class="player-thumb">
+                <div class="player-info">
+                    <p class="fw-bold mb-0 small">Signal Lost</p>
+                    <p class="text-muted mb-0 x-small">Vandal X</p>
+                </div>
+            </div>
+            <div class="player-controls d-flex align-items-center gap-3">
+                <button class="player-btn" id="prevBtn" aria-label="Previous"><i class="bi bi-skip-start-fill"></i></button>
+                <button class="player-btn player-btn-main" id="playPauseBtn" aria-label="Play/Pause"><i class="bi bi-play-fill" id="playIcon"></i></button>
+                <button class="player-btn" id="nextBtn" aria-label="Next"><i class="bi bi-skip-end-fill"></i></button>
+            </div>
+            <div class="player-progress flex-grow-1 d-none d-md-flex align-items-center gap-2">
+                <span class="small text-muted" id="currentTime">0:00</span>
+                <div class="progress flex-grow-1" style="height:4px; cursor:pointer;" id="progressBar">
+                    <div class="progress-bar bg-accent" id="progressFill" style="width:0%"></div>
+                </div>
+                <span class="small text-muted" id="totalTime">3:47</span>
+            </div>
+            <div class="player-volume d-none d-lg-flex align-items-center gap-2">
+                <i class="bi bi-volume-up text-muted"></i>
+                <input type="range" class="form-range volume-range" id="volumeRange" min="0" max="100" value="80" aria-label="Volume">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== DEMO SUBMISSION ========== -->
+<section id="demo" class="section-dark py-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <span class="section-eyebrow">Open Submissions</span>
+                <h2 class="section-title brand-font">Submit Your <span class="accent-color">Demo</span></h2>
+                <p class="section-body mt-4">Think you have what it takes? Off-Limits Entertainment is always listening. Submit your demo and our A&R team will review every submission within 30 days.</p>
+                <ul class="demo-checklist mt-4">
+                    <li><i class="bi bi-check-circle-fill accent-color me-2"></i>All genres considered</li>
+                    <li><i class="bi bi-check-circle-fill accent-color me-2"></i>Response within 30 days</li>
+                    <li><i class="bi bi-check-circle-fill accent-color me-2"></i>No exclusive rights required to submit</li>
+                    <li><i class="bi bi-check-circle-fill accent-color me-2"></i>Direct A&R team review</li>
+                </ul>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+                <div class="demo-form-card">
+                    <form id="demoForm" method="POST" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Artist / Stage Name *</label>
+                                <input type="text" class="form-control form-control-dark" name="artist_name" required placeholder="Your artist name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Real Name *</label>
+                                <input type="text" class="form-control form-control-dark" name="real_name" required placeholder="Full legal name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Email Address *</label>
+                                <input type="email" class="form-control form-control-dark" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Phone Number</label>
+                                <input type="tel" class="form-control form-control-dark" name="phone" placeholder="+1 000 000 0000">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Genre *</label>
+                                <select class="form-select form-control-dark" name="genre" required>
+                                    <option value="" disabled selected>Select genre</option>
+                                    <option>Hip-Hop / Rap</option>
+                                    <option>R&amp;B / Soul</option>
+                                    <option>Electronic / EDM</option>
+                                    <option>Afrobeats / Afropop</option>
+                                    <option>Pop</option>
+                                    <option>Alternative</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Country *</label>
+                                <input type="text" class="form-control form-control-dark" name="country" required placeholder="Your country">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-uppercase fw-semibold">Streaming / SoundCloud Link *</label>
+                                <input type="url" class="form-control form-control-dark" name="stream_link" required placeholder="https://soundcloud.com/yourtrack">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-uppercase fw-semibold">Upload Audio/Video (1–10 files, max 20MB each)</label>
+                                <input type="file" class="form-control form-control-dark" name="demo_files" accept="audio/*,video/*" multiple>
+                                <p class="text-muted x-small mt-1 mb-0">MP3, WAV, AAC, MP4, or MOV. Select up to 10 files.</p>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-uppercase fw-semibold">Tell Us About Yourself</label>
+                                <textarea class="form-control form-control-dark" name="bio" rows="3" placeholder="Your story, influences, goals..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" name="terms" required>
+                                    <label class="form-check-label small text-muted" for="termsCheck">
+                                        I agree to the <a href="terms.html" class="accent-color">Terms & Conditions</a> and confirm this is my original work.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-accent w-100 py-3 text-uppercase fw-bold fs-6">
+                                    <i class="bi bi-send me-2"></i>Submit Demo
+                                </button>
+                            </div>
+                            <div id="demoFormMsg" class="col-12 d-none"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom py-4">
+            <p class="small text-muted mb-0">&copy; 2026 Off-Limits Entertainment. All Rights Reserved. Abuja, Nigeria.</p>
+            <p class="small text-muted mb-0"><i class="bi bi-geo-alt-fill accent-color me-1"></i><span data-abuja-clock>Abuja, Nigeria</span></p>
+            <a href="index.html" class="small text-muted">Back to Home</a>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/supabase-client.js"></script>
+<script src="assets/js/abuja-clock.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

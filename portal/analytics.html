@@ -23,13 +23,16 @@
     </div>
     <nav class="sidebar-nav">
         <a href="dashboard.html"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a>
-        <a href="releases.html"><i class="bi bi-vinyl-fill"></i> My Releases</a>
-        <a href="analytics.html" class="active"><i class="bi bi-bar-chart-fill"></i> Analytics</a>
-        <a href="royalties.html"><i class="bi bi-cash-stack"></i> Royalties</a>
-        <a href="events.html"><i class="bi bi-calendar-event-fill"></i> Events</a>
-        <a href="profile.html"><i class="bi bi-person-fill"></i> My Profile</a>
-        <a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a>
-        <a href="demos.html"><i class="bi bi-music-note-list"></i> Demo Submissions</a>
+        <a href="releases.html" data-roles="artist"><i class="bi bi-vinyl-fill"></i> My Releases</a>
+        <a href="media.html" data-roles="artist"><i class="bi bi-collection-play-fill"></i> My Media</a>
+        <a href="events.html" data-roles="artist"><i class="bi bi-calendar-event-fill"></i> Upcoming Events</a>
+        <a href="manage-events.html" data-roles="admin,manager"><i class="bi bi-calendar2-week-fill"></i> Manage Events &amp; Releases</a>
+        <a href="analytics.html" class="active" data-roles="artist"><i class="bi bi-bar-chart-fill"></i> Analytics</a>
+        <a href="royalties.html" data-roles="artist"><i class="bi bi-cash-stack"></i> Royalties</a>
+        <a href="profile.html" data-roles="artist"><i class="bi bi-person-fill"></i> My Profile</a>
+        <a href="team-chat.html"><i class="bi bi-people-fill"></i> Team Chat</a>
+        <a href="messages.html" data-roles="admin"><i class="bi bi-chat-dots-fill"></i> Fan Inbox</a>
+        <a href="demos.html" data-roles="admin"><i class="bi bi-music-note-list"></i> Demo Submissions</a>
     </nav>
     <div class="sidebar-footer">
         <a href="#" id="portalLogout" class="d-flex align-items-center gap-2 text-muted text-decoration-none" style="font-size:0.85rem;">

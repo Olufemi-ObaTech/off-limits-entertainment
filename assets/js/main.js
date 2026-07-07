@@ -8,18 +8,17 @@
 'use strict';
 
 /* ============================================================
-   1. PRELOADER
+   1. PRELOADER + AOS (AOS must init on every page, preloader or not)
    ============================================================ */
 window.addEventListener('load', () => {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });
+    }
+    initCounters();
+
     const preloader = document.getElementById('preloader');
     if (!preloader) return;
-    setTimeout(() => {
-        preloader.classList.add('hidden');
-        // Init AOS after preloader
-        AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-out-cubic' });
-        // Start counters
-        initCounters();
-    }, 1900);
+    setTimeout(() => preloader.classList.add('hidden'), 1900);
 });
 
 /* ============================================================
@@ -77,6 +76,7 @@ const sections = document.querySelectorAll('section[id], header[id]');
 const navLinks  = document.querySelectorAll('.nav-hover');
 const backToTopBtn = document.getElementById('backToTop');
 const heroVideoEl = document.getElementById('heroVideo');
+const scrollProgressEl = document.getElementById('scrollProgress');
 
 let scrollTicking = false;
 function onScrollFrame() {
@@ -84,6 +84,12 @@ function onScrollFrame() {
 
     if (navbar) {
         navbar.classList.toggle('scrolled', scrollY > 60);
+    }
+
+    if (scrollProgressEl) {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+        scrollProgressEl.style.width = pct + '%';
     }
 
     let current = '';
@@ -326,22 +332,30 @@ if (demoForm && demoFormMsg) {
 
         await withSubmitButton(demoForm, async () => {
             const fd = new FormData(demoForm);
-            const file = fd.get('demo_file');
-            let demoFilePath = null;
+            const fileInput = demoForm.querySelector('[name="demo_files"]');
+            const files = fileInput ? Array.from(fileInput.files) : [];
+            const demoFilePaths = [];
+
+            if (files.length > 10) {
+                showFormMessage(demoFormMsg, false, 'Please select a maximum of 10 files.');
+                return;
+            }
+            const oversized = files.find(f => f.size > 20 * 1024 * 1024);
+            if (oversized) {
+                showFormMessage(demoFormMsg, false, `"${oversized.name}" exceeds the 20MB limit.`);
+                return;
+            }
 
             try {
-                if (file && file.size > 0) {
-                    if (file.size > 20 * 1024 * 1024) {
-                        showFormMessage(demoFormMsg, false, 'Demo file exceeds the 20MB limit.');
-                        return;
-                    }
-                    const safeName = (fd.get('artist_name') || 'artist').toString()
-                        .toLowerCase().replace(/[^a-z0-9_-]/g, '');
+                const safeName = (fd.get('artist_name') || 'artist').toString()
+                    .toLowerCase().replace(/[^a-z0-9_-]/g, '');
+
+                for (const file of files) {
                     const path = `${safeName}_${Date.now()}_${file.name}`;
                     const { error: uploadError } = await supabaseClient.storage
                         .from('demos').upload(path, file);
                     if (uploadError) throw uploadError;
-                    demoFilePath = path;
+                    demoFilePaths.push(path);
                 }
 
                 const { error } = await supabaseClient.from('demo_submissions').insert({
@@ -353,7 +367,7 @@ if (demoForm && demoFormMsg) {
                     country: fd.get('country'),
                     stream_link: fd.get('stream_link'),
                     bio: fd.get('bio') || null,
-                    demo_file_path: demoFilePath,
+                    demo_file_paths: demoFilePaths,
                     terms_accepted: fd.get('terms') === 'on',
                 });
                 if (error) throw error;

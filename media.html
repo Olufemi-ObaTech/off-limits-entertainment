@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Music videos, behind-the-scenes footage, and live performances from Off-Limits Entertainment artists.">
+    <meta name="theme-color" content="#050505">
+    <title>Media Hub | Off-Limits Entertainment</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/Logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpg">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+<div id="scrollProgress"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-outline" id="cursorOutline"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo">
+            <span class="brand-font fw-bold fs-4 d-none d-lg-inline">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="desktopNav">
+            <ul class="navbar-nav mx-auto gap-1 text-uppercase small fw-semibold">
+                <li class="nav-item"><a class="nav-link nav-hover" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="artists.html">Artists</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover current" href="media.html">Media</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="contact.html">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+                <span class="abuja-clock d-none d-xl-flex" data-abuja-clock><i class="bi bi-geo-alt-fill"></i>Abuja, Nigeria</span>
+                <a href="account/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold d-none d-md-inline-block">My Account</a>
+                <a href="portal/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold">Artist Portal</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end bg-dark-glass text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo me-2">
+        <span class="brand-font fs-5 fw-bold">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <ul class="navbar-nav gap-2 text-uppercase fw-semibold fs-5">
+            <li><a class="nav-link py-2" href="index.html" data-bs-dismiss="offcanvas">Home</a></li>
+            <li><a class="nav-link py-2" href="about.html" data-bs-dismiss="offcanvas">About</a></li>
+            <li><a class="nav-link py-2" href="artists.html" data-bs-dismiss="offcanvas">Artists</a></li>
+            <li><a class="nav-link py-2" href="services.html" data-bs-dismiss="offcanvas">Services</a></li>
+            <li><a class="nav-link py-2 current" href="media.html" data-bs-dismiss="offcanvas">Media</a></li>
+            <li><a class="nav-link py-2" href="contact.html" data-bs-dismiss="offcanvas">Contact</a></li>
+        </ul>
+        <div class="d-flex flex-column gap-2 mt-4">
+            <span class="abuja-clock justify-content-center mb-2" data-abuja-clock><i class="bi bi-geo-alt-fill"></i>Abuja, Nigeria</span>
+            <a href="account/login.html" class="btn btn-outline-light text-uppercase fw-bold" data-bs-dismiss="offcanvas">My Account</a>
+            <a href="portal/login.html" class="btn btn-outline-light text-uppercase fw-bold" data-bs-dismiss="offcanvas">Artist Portal</a>
+        </div>
+    </div>
+</div>
+
+<header class="page-hero">
+    <div class="container">
+        <span class="section-eyebrow">Visual Universe</span>
+        <h1 class="section-title brand-font">Media <span class="accent-color">Hub</span></h1>
+    </div>
+</header>
+
+<section class="section-dark py-section">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="video-card video-card-featured">
+                    <div class="video-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=900" alt="Vandal X - Signal Lost (Official Video)" class="img-fluid w-100" loading="lazy" decoding="async">
+                        <div class="video-play-overlay" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <div class="video-play-btn"><i class="bi bi-play-fill"></i></div>
+                        </div>
+                        <div class="video-badge">Official Video</div>
+                    </div>
+                    <div class="video-meta p-3">
+                        <h5 class="fw-bold mb-1">Vandal X — "Signal Lost" (Official Music Video)</h5>
+                        <p class="small text-muted mb-0">12.4M Views &nbsp;·&nbsp; May 2026</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 d-flex flex-column gap-4">
+                <div class="video-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=500" alt="Behind The Scenes" class="img-fluid w-100" loading="lazy" decoding="async">
+                        <div class="video-play-overlay" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <div class="video-play-btn video-play-btn-sm"><i class="bi bi-play-fill"></i></div>
+                        </div>
+                        <div class="video-badge">BTS</div>
+                    </div>
+                    <div class="video-meta p-2">
+                        <h6 class="fw-bold mb-0 small">Behind The Scenes: Signal Lost</h6>
+                        <p class="x-small text-muted mb-0">3.1M Views</p>
+                    </div>
+                </div>
+                <div class="video-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=500" alt="Luna Eclipse Live" class="img-fluid w-100" loading="lazy" decoding="async">
+                        <div class="video-play-overlay" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <div class="video-play-btn video-play-btn-sm"><i class="bi bi-play-fill"></i></div>
+                        </div>
+                        <div class="video-badge">Live</div>
+                    </div>
+                    <div class="video-meta p-2">
+                        <h6 class="fw-bold mb-0 small">Luna Eclipse — Live at Off-Limits Fest</h6>
+                        <p class="x-small text-muted mb-0">5.7M Views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content bg-black border-0">
+                    <div class="modal-header border-0 pb-0">
+                        <h2 class="visually-hidden" id="videoModalLabel">Video Player</h2>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe id="videoFrame" src="" allowfullscreen title="Video Player"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== EVENTS ========== -->
+<section id="events" class="section-darker py-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8" data-aos="fade-up">
+                <span class="section-eyebrow">Live Experience</span>
+                <h2 class="section-title brand-font">Upcoming <span class="accent-color">Events</span></h2>
+            </div>
+        </div>
+
+        <div class="events-list" data-aos="fade-up">
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">14</span>
+                    <span class="event-month">JUN</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Off-Limits Fest 2026</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>Abuja, Nigeria &nbsp;·&nbsp; International Conference Centre</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Vandal X, Kxng Dayo, Soleil + more</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-accent btn-sm text-uppercase fw-bold px-4">Get Tickets</a>
+                </div>
+            </div>
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">22</span>
+                    <span class="event-month">JUL</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Luna Eclipse — Neon Pulse Tour</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>London, UK &nbsp;·&nbsp; O2 Academy Brixton</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Luna Eclipse</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-accent btn-sm text-uppercase fw-bold px-4">Get Tickets</a>
+                </div>
+            </div>
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">09</span>
+                    <span class="event-month">AUG</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Aria Vance — Midnight Sessions</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>New York, USA &nbsp;·&nbsp; Brooklyn Steel</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Aria Vance</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-accent btn-sm text-uppercase fw-bold px-4">Get Tickets</a>
+                </div>
+            </div>
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">30</span>
+                    <span class="event-month">SEP</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Phantom — Dark Matter Live</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>Toronto, Canada &nbsp;·&nbsp; Rebel Entertainment Complex</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Phantom</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-outline-accent btn-sm text-uppercase fw-bold px-4">Sold Out</a>
+                </div>
+            </div>
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">18</span>
+                    <span class="event-month">OCT</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Kxng Dayo — Abuja Homecoming</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>Abuja, Nigeria &nbsp;·&nbsp; Transcorp Hilton Abuja</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Kxng Dayo</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-accent btn-sm text-uppercase fw-bold px-4">Get Tickets</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom py-4">
+            <p class="small text-muted mb-0">&copy; 2026 Off-Limits Entertainment. All Rights Reserved. Abuja, Nigeria.</p>
+            <p class="small text-muted mb-0"><i class="bi bi-geo-alt-fill accent-color me-1"></i><span data-abuja-clock>Abuja, Nigeria</span></p>
+            <a href="index.html" class="small text-muted">Back to Home</a>
+        </div>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/abuja-clock.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

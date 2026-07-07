@@ -23,13 +23,16 @@
     </div>
     <nav class="sidebar-nav">
         <a href="dashboard.html" class="active"><i class="bi bi-grid-1x2-fill"></i> Dashboard</a>
-        <a href="releases.html"><i class="bi bi-vinyl-fill"></i> My Releases</a>
-        <a href="analytics.html"><i class="bi bi-bar-chart-fill"></i> Analytics</a>
-        <a href="royalties.html"><i class="bi bi-cash-stack"></i> Royalties</a>
-        <a href="events.html"><i class="bi bi-calendar-event-fill"></i> Events</a>
-        <a href="profile.html"><i class="bi bi-person-fill"></i> My Profile</a>
-        <a href="messages.html"><i class="bi bi-chat-dots-fill"></i> Messages</a>
-        <a href="demos.html"><i class="bi bi-music-note-list"></i> Demo Submissions</a>
+        <a href="releases.html" data-roles="artist"><i class="bi bi-vinyl-fill"></i> My Releases</a>
+        <a href="media.html" data-roles="artist"><i class="bi bi-collection-play-fill"></i> My Media</a>
+        <a href="events.html" data-roles="artist"><i class="bi bi-calendar-event-fill"></i> Upcoming Events</a>
+        <a href="manage-events.html" data-roles="admin,manager"><i class="bi bi-calendar2-week-fill"></i> Manage Events &amp; Releases</a>
+        <a href="analytics.html" data-roles="artist"><i class="bi bi-bar-chart-fill"></i> Analytics</a>
+        <a href="royalties.html" data-roles="artist"><i class="bi bi-cash-stack"></i> Royalties</a>
+        <a href="profile.html" data-roles="artist"><i class="bi bi-person-fill"></i> My Profile</a>
+        <a href="team-chat.html"><i class="bi bi-people-fill"></i> Team Chat</a>
+        <a href="messages.html" data-roles="admin"><i class="bi bi-chat-dots-fill"></i> Fan Inbox</a>
+        <a href="demos.html" data-roles="admin"><i class="bi bi-music-note-list"></i> Demo Submissions</a>
     </nav>
     <div class="sidebar-footer">
         <a href="#" id="portalLogout" class="d-flex align-items-center gap-2 text-muted text-decoration-none" style="font-size:0.85rem;">
@@ -60,7 +63,7 @@
             <div class="stat-card">
                 <div class="stat-icon"><i class="bi bi-vinyl-fill"></i></div>
                 <div class="stat-value" id="statReleases">—</div>
-                <div class="stat-label">Releases</div>
+                <div class="stat-label" id="statReleasesLabel">Releases</div>
             </div>
         </div>
         <div class="col-6 col-lg-3">
@@ -70,27 +73,34 @@
                 <div class="stat-label">Upcoming Events</div>
             </div>
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-lg-3" data-roles="admin">
             <div class="stat-card">
                 <div class="stat-icon"><i class="bi bi-music-note-list"></i></div>
                 <div class="stat-value" id="statDemos">—</div>
                 <div class="stat-label">Demo Submissions</div>
             </div>
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-lg-3" data-roles="admin,manager">
             <div class="stat-card">
-                <div class="stat-icon"><i class="bi bi-graph-up-arrow"></i></div>
-                <div class="stat-value">—</div>
-                <div class="stat-label">Monthly Streams</div>
+                <div class="stat-icon"><i class="bi bi-people-fill"></i></div>
+                <div class="stat-value" id="statArtists">—</div>
+                <div class="stat-label" id="statArtistsLabel">Artists</div>
+            </div>
+        </div>
+        <div class="col-6 col-lg-3" data-roles="artist">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="bi bi-collection-play-fill"></i></div>
+                <div class="stat-value" id="statMedia">—</div>
+                <div class="stat-label">Media Files</div>
             </div>
         </div>
     </div>
 
-    <div class="mb-4 d-flex justify-content-between align-items-center">
+    <div class="mb-4 d-flex justify-content-between align-items-center" data-roles="admin">
         <h5 class="brand-font mb-0" style="font-size:0.85rem;">Recent Demo Submissions</h5>
         <a href="demos.html" class="text-muted small text-decoration-none">View All</a>
     </div>
-    <div class="table-responsive">
+    <div class="table-responsive" data-roles="admin">
         <table class="table portal-table">
             <thead>
                 <tr><th>Artist</th><th>Genre</th><th>Country</th><th>Stream Link</th><th>Status</th><th>Submitted</th></tr>
@@ -98,6 +108,17 @@
             <tbody id="demosTableBody">
                 <tr><td colspan="6" class="text-center text-muted py-4">Loading…</td></tr>
             </tbody>
+        </table>
+    </div>
+
+    <div class="mb-4 d-flex justify-content-between align-items-center" data-roles="manager">
+        <h5 class="brand-font mb-0" style="font-size:0.85rem;">Your Managed Artists</h5>
+        <a href="manage-events.html" class="text-muted small text-decoration-none">Manage Events &amp; Releases</a>
+    </div>
+    <div class="table-responsive" data-roles="manager">
+        <table class="table portal-table">
+            <thead><tr><th>Artist</th><th>Genre</th></tr></thead>
+            <tbody id="managedArtistsBody"><tr><td colspan="2" class="text-center text-muted py-4">Loading…</td></tr></tbody>
         </table>
     </div>
 </main>
@@ -109,36 +130,78 @@
 <script src="../assets/js/portal.js"></script>
 <script>
 (async () => {
-    const { artist } = await requirePortalAuth();
+    const { role, artist, managedArtistIds } = await requirePortalAuth();
+    const today = new Date().toISOString().slice(0, 10);
 
-    const { count: releasesCount } = await supabaseClient
-        .from('releases').select('*', { count: 'exact', head: true }).eq('artist_id', artist.id);
-    document.getElementById('statReleases').textContent = releasesCount ?? 0;
+    if (role === 'artist') {
+        document.getElementById('statReleasesLabel').textContent = 'Releases';
+        const { count: releasesCount } = await supabaseClient
+            .from('releases').select('*', { count: 'exact', head: true }).eq('artist_id', artist.id);
+        document.getElementById('statReleases').textContent = releasesCount ?? 0;
 
-    const { count: eventsCount } = await supabaseClient
-        .from('events').select('*', { count: 'exact', head: true })
-        .eq('artist_id', artist.id).gte('event_date', new Date().toISOString().slice(0, 10));
-    document.getElementById('statEvents').textContent = eventsCount ?? 0;
+        const { count: eventsCount } = await supabaseClient
+            .from('events').select('*', { count: 'exact', head: true })
+            .eq('artist_id', artist.id).gte('event_date', today);
+        document.getElementById('statEvents').textContent = eventsCount ?? 0;
 
-    const { data: demos, count: demosCount } = await supabaseClient
-        .from('demo_submissions').select('*', { count: 'exact' }).order('created_at', { ascending: false }).limit(10);
-    document.getElementById('statDemos').textContent = demosCount ?? 0;
+        const { count: mediaCount } = await supabaseClient
+            .from('artist_media').select('*', { count: 'exact', head: true }).eq('artist_id', artist.id);
+        document.getElementById('statMedia').textContent = mediaCount ?? 0;
 
-    const tbody = document.getElementById('demosTableBody');
-    if (!demos || !demos.length) {
-        tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-4">No submissions yet.</td></tr>';
-        return;
+    } else if (role === 'manager') {
+        document.getElementById('statReleasesLabel').textContent = 'Managed Releases';
+        document.getElementById('statArtistsLabel').textContent = 'Artists Managed';
+
+        const ids = managedArtistIds.length ? managedArtistIds : [-1];
+        const { count: releasesCount } = await supabaseClient
+            .from('releases').select('*', { count: 'exact', head: true }).in('artist_id', ids);
+        document.getElementById('statReleases').textContent = releasesCount ?? 0;
+
+        const { count: eventsCount } = await supabaseClient
+            .from('events').select('*', { count: 'exact', head: true }).in('artist_id', ids).gte('event_date', today);
+        document.getElementById('statEvents').textContent = eventsCount ?? 0;
+
+        document.getElementById('statArtists').textContent = managedArtistIds.length;
+
+        const { data: artists } = await supabaseClient
+            .from('artists').select('name, genre').in('id', ids);
+        const body = document.getElementById('managedArtistsBody');
+        body.innerHTML = (artists && artists.length)
+            ? artists.map(a => `<tr><td>${a.name}</td><td>${a.genre}</td></tr>`).join('')
+            : '<tr><td colspan="2" class="text-center text-muted py-4">No artists assigned yet.</td></tr>';
+
+    } else if (role === 'admin') {
+        document.getElementById('statReleasesLabel').textContent = 'Total Releases';
+        document.getElementById('statArtistsLabel').textContent = 'Total Artists';
+
+        const { count: releasesCount } = await supabaseClient
+            .from('releases').select('*', { count: 'exact', head: true });
+        document.getElementById('statReleases').textContent = releasesCount ?? 0;
+
+        const { count: eventsCount } = await supabaseClient
+            .from('events').select('*', { count: 'exact', head: true }).gte('event_date', today);
+        document.getElementById('statEvents').textContent = eventsCount ?? 0;
+
+        const { count: artistsCount } = await supabaseClient
+            .from('artists').select('*', { count: 'exact', head: true });
+        document.getElementById('statArtists').textContent = artistsCount ?? 0;
+
+        const { data: demos, count: demosCount } = await supabaseClient
+            .from('demo_submissions').select('*', { count: 'exact' }).order('created_at', { ascending: false }).limit(10);
+        document.getElementById('statDemos').textContent = demosCount ?? 0;
+
+        const tbody = document.getElementById('demosTableBody');
+        tbody.innerHTML = (demos && demos.length) ? demos.map(d => `
+            <tr>
+                <td><strong>${d.artist_name}</strong><br><small class="text-muted">${d.email}</small></td>
+                <td>${d.genre}</td>
+                <td>${d.country}</td>
+                <td><a href="${d.stream_link}" target="_blank" rel="noopener" class="text-muted small"><i class="bi bi-box-arrow-up-right me-1"></i>Listen</a></td>
+                <td><span class="badge badge-${d.status} px-2 py-1" style="font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;">${d.status}</span></td>
+                <td class="text-muted small">${new Date(d.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
+            </tr>
+        `).join('') : '<tr><td colspan="6" class="text-center text-muted py-4">No submissions yet.</td></tr>';
     }
-    tbody.innerHTML = demos.map(d => `
-        <tr>
-            <td><strong>${d.artist_name}</strong><br><small class="text-muted">${d.email}</small></td>
-            <td>${d.genre}</td>
-            <td>${d.country}</td>
-            <td><a href="${d.stream_link}" target="_blank" rel="noopener" class="text-muted small"><i class="bi bi-box-arrow-up-right me-1"></i>Listen</a></td>
-            <td><span class="badge badge-${d.status} px-2 py-1" style="font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;">${d.status}</span></td>
-            <td class="text-muted small">${new Date(d.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</td>
-        </tr>
-    `).join('');
 })();
 </script>
 </body>

@@ -724,6 +724,34 @@ body {
     .hero-stats-bar .stat-item:last-child { border-bottom: none; }
 }
 
+/* ---- LOCATION / LIVE CLOCK WIDGET ---- */
+.abuja-clock {
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.abuja-clock i { color: var(--accent); }
+
+/* ---- SCROLL PROGRESS BAR ---- */
+#scrollProgress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: var(--accent);
+    z-index: 100001;
+    transition: width 0.1s ease-out;
+}
+
+/* ---- PRIMARY NAV (multi-page) ---- */
+.nav-hover.current { color: #fff; }
+.nav-hover.current::after { left: 0.75rem; right: 0.75rem; }
+
 /* ---- SCROLLBAR ---- */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg-darker); }
