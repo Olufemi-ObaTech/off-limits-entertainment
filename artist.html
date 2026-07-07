@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+    <title>Artist Profile | Off-Limits Entertainment</title>
+    <link rel="icon" type="image/jpeg" href="assets/images/Logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body style="cursor:auto;">
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolled" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo">
+            <span class="brand-font fw-bold fs-4">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        </a>
+        <a href="roster.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold ms-auto">
+            <i class="bi bi-arrow-left me-1"></i>Full Roster
+        </a>
+    </div>
+</nav>
+
+<header class="page-hero">
+    <div class="container">
+        <div id="artistState" class="state-msg">Loading artist…</div>
+        <div class="artist-profile-hero d-none" id="artistHero">
+            <img src="" alt="" class="artist-profile-photo" id="artistPhoto">
+            <div>
+                <span class="section-eyebrow" id="artistGenre">Genre</span>
+                <h1 class="section-title brand-font" id="artistName">Artist Name</h1>
+                <div class="social-links mt-3" id="artistSocials"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="section-dark py-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 legal-content">
+                <h2>Biography</h2>
+                <p id="artistBio">—</p>
+            </div>
+        </div>
+        <div class="mt-5">
+            <h2 class="legal-content-h2" style="font-family:var(--font-brand);font-size:1.1rem;text-transform:uppercase;letter-spacing:2px;color:var(--accent);">Releases</h2>
+            <div class="row g-4 mt-1" id="artistReleases"></div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom py-4">
+            <p class="small text-muted mb-0">&copy; 2026 Off-Limits Entertainment. All Rights Reserved. Abuja, Nigeria.</p>
+            <a href="index.html" class="small text-muted">Back to Home</a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/supabase-client.js"></script>
+<script src="assets/js/artists-fallback.js"></script>
+<script>
+    const slug = new URLSearchParams(window.location.search).get('id');
+
+    function renderArtist(a, releases) {
+        document.getElementById('artistState').remove();
+        document.getElementById('artistHero').classList.remove('d-none');
+        document.title = a.name + ' | Off-Limits Entertainment';
+        document.getElementById('artistPhoto').src = a.photo_url || 'assets/images/Logo.jpg';
+        document.getElementById('artistPhoto').alt = a.name;
+        document.getElementById('artistGenre').textContent = a.genre;
+        document.getElementById('artistName').innerHTML = a.name;
+        document.getElementById('artistBio').textContent = a.bio || 'Biography coming soon.';
+
+        const socials = document.getElementById('artistSocials');
+        const links = [
+            ['spotify_url', 'bi-spotify'], ['apple_url', 'bi-apple'],
+            ['instagram', 'bi-instagram'], ['youtube', 'bi-youtube'],
+        ];
+        socials.innerHTML = links
+            .filter(([key]) => a[key])
+            .map(([key, icon]) => `<a href="${a[key]}" class="social-btn" target="_blank" rel="noopener"><i class="bi ${icon}"></i></a>`)
+            .join('') || '';
+
+        const releasesEl = document.getElementById('artistReleases');
+        if (!releases || !releases.length) {
+            releasesEl.innerHTML = '<p class="state-msg">No releases yet.</p>';
+            return;
+        }
+        releasesEl.innerHTML = releases.map(r => `
+            <div class="col-6 col-md-3">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="${r.cover_url || 'assets/images/Logo.jpg'}" alt="${r.title}" class="img-fluid" loading="lazy" decoding="async">
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">${r.title}</h6>
+                        <p class="small text-muted mb-0 text-capitalize">${r.type}</p>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    (async () => {
+        if (!slug) {
+            document.getElementById('artistState').textContent = 'No artist specified.';
+            return;
+        }
+
+        if (supabaseClient) {
+            const { data: artist, error } = await supabaseClient
+                .from('artists').select('*').eq('slug', slug).single();
+            if (!error && artist) {
+                const { data: releases } = await supabaseClient
+                    .from('releases').select('*').eq('artist_id', artist.id).order('release_date', { ascending: false });
+                renderArtist(artist, releases || []);
+                return;
+            }
+        }
+
+        const fallback = window.ARTISTS_FALLBACK.find(a => a.slug === slug);
+        if (fallback) {
+            renderArtist(fallback, []);
+        } else {
+            document.getElementById('artistState').textContent = 'Artist not found.';
+        }
+    })();
+</script>
+</body>
+</html>

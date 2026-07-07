@@ -1,0 +1,13 @@
+{
+  "name": "Off-Limits Entertainment",
+  "short_name": "Off-Limits",
+  "description": "A full-scale media engine, artist incubator, and immersive lifestyle brand.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    { "src": "assets/images/Logo.jpg", "sizes": "192x192", "type": "image/jpeg" },
+    { "src": "assets/images/Logo.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ]
+}

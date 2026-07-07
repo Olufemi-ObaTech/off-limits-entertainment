@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Off-Limits Entertainment — A full-scale media engine, artist incubator, and immersive lifestyle brand. We manage talent, produce chart-topping audio-visual spectacles, and break industry rules.">
+    <meta name="keywords" content="Off-Limits Entertainment, record label, music, artists, hip-hop, R&B, electronic, talent management">
+    <meta property="og:title" content="Off-Limits Entertainment | Official Hub">
+    <meta property="og:description" content="Pushing the boundaries of music, culture, and entertainment.">
+    <meta property="og:image" content="assets/images/Logo.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Off-Limits Entertainment | Official Hub</title>
+
+    <!-- Mobile / PWA compatibility -->
+    <meta name="theme-color" content="#050505">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Off-Limits">
+    <link rel="icon" type="image/jpeg" href="assets/images/Logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/Logo.jpg">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ========== PRELOADER ========== -->
+<div id="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-logo brand-font">OFF<span class="accent-color">-</span>LIMITS</div>
+        <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
+</div>
+
+<!-- ========== CURSOR ========== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-outline" id="cursorOutline"></div>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+    <div class="container-fluid px-4 px-lg-5">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo">
+            <span class="brand-font fw-bold fs-4 d-none d-lg-inline">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="desktopNav">
+            <ul class="navbar-nav mx-auto gap-1 text-uppercase small fw-semibold">
+                <li class="nav-item"><a class="nav-link nav-hover" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="#roster">Artists</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="#releases">Releases</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="#media">Media</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="#merch">Merch</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="#events">Events</a></li>
+                <li class="nav-item"><a class="nav-link nav-hover" href="#contact">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+                <a href="#demo" class="btn btn-accent btn-sm px-3 text-uppercase fw-bold">Book Demo</a>
+                <a href="portal/login.html" class="btn btn-outline-light btn-sm px-3 text-uppercase fw-bold">Artist Portal</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Offcanvas Menu -->
+<div class="offcanvas offcanvas-end bg-dark-glass text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="navbar-logo me-2">
+        <span class="brand-font fs-5 fw-bold">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <ul class="navbar-nav gap-2 text-uppercase fw-semibold fs-5">
+            <li><a class="nav-link py-2" href="#home" data-bs-dismiss="offcanvas">Home</a></li>
+            <li><a class="nav-link py-2" href="#about" data-bs-dismiss="offcanvas">About</a></li>
+            <li><a class="nav-link py-2" href="#roster" data-bs-dismiss="offcanvas">Artists</a></li>
+            <li><a class="nav-link py-2" href="#releases" data-bs-dismiss="offcanvas">Releases</a></li>
+            <li><a class="nav-link py-2" href="#services" data-bs-dismiss="offcanvas">Services</a></li>
+            <li><a class="nav-link py-2" href="#media" data-bs-dismiss="offcanvas">Media</a></li>
+            <li><a class="nav-link py-2" href="#merch" data-bs-dismiss="offcanvas">Merch</a></li>
+            <li><a class="nav-link py-2" href="#events" data-bs-dismiss="offcanvas">Events</a></li>
+            <li><a class="nav-link py-2" href="#contact" data-bs-dismiss="offcanvas">Contact</a></li>
+        </ul>
+        <div class="d-flex flex-column gap-2 mt-4">
+            <a href="#demo" class="btn btn-accent text-uppercase fw-bold" data-bs-dismiss="offcanvas">Book Demo</a>
+            <a href="portal/login.html" class="btn btn-outline-light text-uppercase fw-bold">Artist Portal</a>
+        </div>
+    </div>
+</div>
+
+<!-- ========== HERO SECTION ========== -->
+<section id="home" class="hero-section">
+    <div class="hero-video-wrap" id="heroVideoWrap">
+        <video autoplay muted loop playsinline preload="none" class="hero-video" id="heroVideo"
+               poster="assets/images/photo_1_2026-05-16_07-20-49.jpg">
+            <source src="assets/video/hero-reel.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-noise"></div>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker-track" id="tickerTrack">
+            <span>NEW DROP: VANDAL X — "SIGNAL LOST" &nbsp;★&nbsp;</span>
+            <span>LUNA ECLIPSE WORLD TOUR 2026 &nbsp;★&nbsp;</span>
+            <span>OFF-LIMITS FEST — COMING SOON &nbsp;★&nbsp;</span>
+            <span>ARIA VANCE — "MIDNIGHT FREQUENCY" OUT NOW &nbsp;★&nbsp;</span>
+            <span>SUBMIT YOUR DEMO — OPEN SUBMISSIONS &nbsp;★&nbsp;</span>
+            <span>NEW DROP: VANDAL X — "SIGNAL LOST" &nbsp;★&nbsp;</span>
+            <span>LUNA ECLIPSE WORLD TOUR 2026 &nbsp;★&nbsp;</span>
+            <span>OFF-LIMITS FEST — COMING SOON &nbsp;★&nbsp;</span>
+        </div>
+    </div>
+
+    <div class="container hero-content">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-9">
+                <div class="hero-eyebrow mb-3" data-aos="fade-up" data-aos-delay="200">
+                    <span class="badge-pill-accent">Est. 2020 &nbsp;|&nbsp; Abuja, Nigeria &nbsp;|&nbsp; Global</span>
+                </div>
+                <h1 class="hero-headline brand-font" data-aos="fade-up" data-aos-delay="300">
+                    WE DON'T<br>FOLLOW<br><span class="accent-color glitch-text" data-text="RULES.">RULES.</span>
+                </h1>
+                <p class="hero-sub mt-4 mb-5 col-lg-7" data-aos="fade-up" data-aos-delay="450">
+                    Off-Limits Entertainment is a full-scale media engine based in Abuja, Nigeria — artist incubator, production house, and immersive lifestyle brand. We build careers that outlast trends.
+                </p>
+                <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="550">
+                    <a href="#roster" class="btn btn-accent btn-lg px-5 py-3 text-uppercase fw-bold">Meet The Artists</a>
+                    <a href="#releases" class="btn btn-ghost btn-lg px-5 py-3 text-uppercase fw-bold">
+                        <i class="bi bi-play-circle me-2"></i>Latest Drops
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <span class="small text-uppercase fw-semibold letter-spacing-3">Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+
+    <!-- Hero Stats -->
+    <div class="hero-stats-bar">
+        <div class="container">
+            <div class="row g-0 text-center">
+                <div class="col-6 col-md-3 stat-item">
+                    <span class="stat-num brand-font" data-count="47">0</span><span class="accent-color brand-font">+</span>
+                    <p class="stat-label">Artists Signed</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <span class="stat-num brand-font" data-count="120">0</span><span class="accent-color brand-font">M+</span>
+                    <p class="stat-label">Streams Worldwide</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <span class="stat-num brand-font" data-count="38">0</span><span class="accent-color brand-font">+</span>
+                    <p class="stat-label">Chart Entries</p>
+                </div>
+                <div class="col-6 col-md-3 stat-item">
+                    <span class="stat-num brand-font" data-count="15">0</span><span class="accent-color brand-font">+</span>
+                    <p class="stat-label">Countries Reached</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== ABOUT SECTION ========== -->
+<section id="about" class="section-dark py-section about-bg-section" style="background-image: url('assets/images/photo_1_2026-05-16_07-20-49.jpg');">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="about-img-stack">
+                    <img src="assets/images/photo_2_2026-05-16_07-20-49.jpg" alt="Off-Limits Artist" class="about-img-main img-fluid" loading="lazy" decoding="async">
+                    <div class="about-badge brand-font">
+                        <span class="accent-color display-6 fw-bold">6</span>
+                        <span class="small text-uppercase">Years<br>Breaking<br>Rules</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                <span class="section-eyebrow">Who We Are</span>
+                <h2 class="section-title brand-font">More Than A<br><span class="accent-color">Label.</span></h2>
+                <p class="section-body mt-4">
+                    Off-Limits Entertainment was born in Abuja, Nigeria from a refusal to accept the status quo. We are a full-service entertainment company — part record label, part creative agency, part cultural movement. Inspired by the blueprints of <strong>Roc Nation</strong>, <strong>88rising</strong>, and <strong>Top Dawg Entertainment</strong>, we've built a machine that doesn't just sign artists — it builds legacies.
+                </p>
+                <p class="section-body">
+                    From A&R and production to brand partnerships, touring, and film — every arm of Off-Limits is engineered to amplify your voice and expand your world.
+                </p>
+                <div class="row g-3 mt-4">
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-music-note-beamed accent-color me-2"></i>A&R & Signing</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-camera-video accent-color me-2"></i>Film & Visual</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-globe accent-color me-2"></i>Global Distribution</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-megaphone accent-color me-2"></i>Brand Partnerships</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-vinyl accent-color me-2"></i>Publishing Rights</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="about-pill"><i class="bi bi-calendar-event accent-color me-2"></i>Live Events</div>
+                    </div>
+                </div>
+                <a href="#services" class="btn btn-accent mt-5 px-4 py-3 text-uppercase fw-bold">Our Full Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MARQUEE DIVIDER ========== -->
+<div class="marquee-divider">
+    <div class="marquee-inner">
+        <span>MUSIC &nbsp;✦&nbsp; CULTURE &nbsp;✦&nbsp; FILM &nbsp;✦&nbsp; FASHION &nbsp;✦&nbsp; LIVE EVENTS &nbsp;✦&nbsp; PUBLISHING &nbsp;✦&nbsp; BRAND DEALS &nbsp;✦&nbsp; STREAMING &nbsp;✦&nbsp;</span>
+        <span>MUSIC &nbsp;✦&nbsp; CULTURE &nbsp;✦&nbsp; FILM &nbsp;✦&nbsp; FASHION &nbsp;✦&nbsp; LIVE EVENTS &nbsp;✦&nbsp; PUBLISHING &nbsp;✦&nbsp; BRAND DEALS &nbsp;✦&nbsp; STREAMING &nbsp;✦&nbsp;</span>
+    </div>
+</div>
+
+<!-- ========== ARTIST ROSTER ========== -->
+<section id="roster" class="section-dark py-section">
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-7" data-aos="fade-up">
+                <span class="section-eyebrow">The Family</span>
+                <h2 class="section-title brand-font">Global <span class="accent-color">Roster</span></h2>
+            </div>
+            <div class="col-lg-5 text-lg-end" data-aos="fade-up" data-aos-delay="100">
+                <!-- Genre Filter -->
+                <div class="genre-filter d-flex flex-wrap gap-2 justify-content-lg-end mt-3 mt-lg-0">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="hiphop">Hip-Hop</button>
+                    <button class="filter-btn" data-filter="rnb">R&amp;B</button>
+                    <button class="filter-btn" data-filter="electronic">Electronic</button>
+                    <button class="filter-btn" data-filter="afrobeats">Afrobeats</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4" id="artistGrid">
+            <!-- Artist 1 -->
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="hiphop" data-aos="fade-up" data-aos-delay="0">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/img3.jpg" alt="Vandal X" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=vandal-x" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Vandal X</h5>
+                        <p class="small accent-color mb-0">Hip-Hop / Alternative</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Artist 2 -->
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="electronic" data-aos="fade-up" data-aos-delay="80">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?q=80&w=600" alt="Luna Eclipse" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=luna-eclipse" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Luna Eclipse</h5>
+                        <p class="small accent-color mb-0">Electronic Pop</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Artist 3 -->
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="rnb" data-aos="fade-up" data-aos-delay="160">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/photo_2_2026-05-16_07-20-49.jpg" alt="Aria Vance" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=aria-vance" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Aria Vance</h5>
+                        <p class="small accent-color mb-0">R&amp;B / Soul</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Artist 4 -->
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="afrobeats" data-aos="fade-up" data-aos-delay="240">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=600" alt="Kxng Dayo" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=kxng-dayo" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Kxng Dayo</h5>
+                        <p class="small accent-color mb-0">Afrobeats / Dancehall</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Artist 5 -->
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="hiphop" data-aos="fade-up" data-aos-delay="0">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=600" alt="Phantom" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=phantom" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Phantom</h5>
+                        <p class="small accent-color mb-0">Trap / Dark Hip-Hop</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Artist 6 -->
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="rnb" data-aos="fade-up" data-aos-delay="80">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/img5.jpg" alt="Zara Nox" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=zara-nox" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Zara Nox</h5>
+                        <p class="small accent-color mb-0">Neo-Soul / R&amp;B</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Artist 7 -->
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="electronic" data-aos="fade-up" data-aos-delay="160">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/img2.jpg" alt="Neon Drift" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=neon-drift" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Neon Drift</h5>
+                        <p class="small accent-color mb-0">Electronic / Synthwave</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Artist 8 -->
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-genre="afrobeats" data-aos="fade-up" data-aos-delay="240">
+                <div class="artist-card">
+                    <div class="artist-img-wrap">
+                        <img src="assets/images/img1.jpg" alt="Soleil" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="artist-overlay">
+                            <div class="artist-socials">
+                                <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                <a href="#" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                            </div>
+                            <a href="artist.html?id=soleil" class="btn btn-accent btn-sm text-uppercase fw-bold mt-2">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h5 class="fw-bold mb-0">Soleil</h5>
+                        <p class="small accent-color mb-0">Afropop / World</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="roster.html" class="btn btn-outline-accent px-5 py-3 text-uppercase fw-bold">View Full Roster</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== LATEST RELEASES ========== -->
+<section id="releases" class="section-darker py-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8" data-aos="fade-up">
+                <span class="section-eyebrow">Fresh Off The Press</span>
+                <h2 class="section-title brand-font">Latest <span class="accent-color">Releases</span></h2>
+            </div>
+        </div>
+
+        <!-- Featured Release -->
+        <div class="featured-release mb-5" data-aos="fade-up">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-5">
+                    <div class="release-cover-wrap">
+                        <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800" alt="Signal Lost Album Cover" class="img-fluid release-cover" loading="lazy" decoding="async">
+                        <div class="release-play-btn" id="featuredPlayBtn">
+                            <i class="bi bi-play-fill fs-1"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 p-4 p-lg-5">
+                    <span class="badge-pill-accent mb-3">Featured Release</span>
+                    <h3 class="brand-font fw-bold fs-2">Signal Lost</h3>
+                    <p class="accent-color fw-semibold mb-1">Vandal X</p>
+                    <p class="text-muted small mb-4">Album &nbsp;·&nbsp; 14 Tracks &nbsp;·&nbsp; Released May 2026</p>
+                    <p class="section-body">A raw, unfiltered journey through the noise of modern life. Vandal X's debut album blends alternative hip-hop with cinematic production — a statement record for a generation that refuses to be silenced.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <a href="#" class="btn btn-accent px-4 py-2 text-uppercase fw-bold"><i class="bi bi-spotify me-2"></i>Spotify</a>
+                        <a href="#" class="btn btn-ghost px-4 py-2 text-uppercase fw-bold"><i class="bi bi-apple me-2"></i>Apple Music</a>
+                        <a href="#" class="btn btn-ghost px-4 py-2 text-uppercase fw-bold"><i class="bi bi-youtube me-2"></i>YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Release Grid -->
+        <div class="row g-4">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=400" alt="Midnight Frequency" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="release-thumb-overlay"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">Midnight Frequency</h6>
+                        <p class="small text-muted mb-0">Aria Vance &nbsp;·&nbsp; Single</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="80">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=400" alt="Neon Pulse EP" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="release-thumb-overlay"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">Neon Pulse EP</h6>
+                        <p class="small text-muted mb-0">Luna Eclipse &nbsp;·&nbsp; EP</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="160">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=400" alt="Lagos to London" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="release-thumb-overlay"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">Lagos to London</h6>
+                        <p class="small text-muted mb-0">Kxng Dayo &nbsp;·&nbsp; Album</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="240">
+                <div class="release-card">
+                    <div class="release-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=400" alt="Dark Matter" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="release-thumb-overlay"><i class="bi bi-play-fill"></i></div>
+                    </div>
+                    <div class="release-meta mt-3">
+                        <h6 class="fw-bold mb-0">Dark Matter</h6>
+                        <p class="small text-muted mb-0">Phantom &nbsp;·&nbsp; Mixtape</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Embedded Music Player Bar -->
+        <div class="music-player-bar mt-5" id="musicPlayer" data-aos="fade-up">
+            <div class="d-flex align-items-center gap-3">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=80" alt="Now Playing" class="player-thumb">
+                <div class="player-info">
+                    <p class="fw-bold mb-0 small">Signal Lost</p>
+                    <p class="text-muted mb-0 x-small">Vandal X</p>
+                </div>
+            </div>
+            <div class="player-controls d-flex align-items-center gap-3">
+                <button class="player-btn" id="prevBtn" aria-label="Previous"><i class="bi bi-skip-start-fill"></i></button>
+                <button class="player-btn player-btn-main" id="playPauseBtn" aria-label="Play/Pause"><i class="bi bi-play-fill" id="playIcon"></i></button>
+                <button class="player-btn" id="nextBtn" aria-label="Next"><i class="bi bi-skip-end-fill"></i></button>
+            </div>
+            <div class="player-progress flex-grow-1 d-none d-md-flex align-items-center gap-2">
+                <span class="small text-muted" id="currentTime">0:00</span>
+                <div class="progress flex-grow-1" style="height:4px; cursor:pointer;" id="progressBar">
+                    <div class="progress-bar bg-accent" id="progressFill" style="width:0%"></div>
+                </div>
+                <span class="small text-muted" id="totalTime">3:47</span>
+            </div>
+            <div class="player-volume d-none d-lg-flex align-items-center gap-2">
+                <i class="bi bi-volume-up text-muted"></i>
+                <input type="range" class="form-range volume-range" id="volumeRange" min="0" max="100" value="80" aria-label="Volume">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== SERVICES SECTION ========== -->
+<section id="services" class="section-dark py-section">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="section-eyebrow">What We Do</span>
+            <h2 class="section-title brand-font">Our <span class="accent-color">Services</span></h2>
+            <p class="section-body col-lg-6 mx-auto mt-3">From raw talent to global icon — we provide every tool, connection, and platform you need to dominate the industry.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-music-note-list"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">A&R & Artist Development</h5>
+                    <p class="text-muted small mt-2">We scout, sign, and develop artists from the ground up. Our A&R team has an ear for the next wave before it breaks.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-broadcast"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Global Distribution</h5>
+                    <p class="text-muted small mt-2">Your music on every platform — Spotify, Apple Music, Tidal, Amazon, YouTube Music — with real-time analytics and royalty tracking.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-camera-reels"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Film & Visual Production</h5>
+                    <p class="text-muted small mt-2">Cinematic music videos, short films, and branded content. We tell stories that live beyond the song.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Marketing & Promotion</h5>
+                    <p class="text-muted small mt-2">Data-driven campaigns across social, digital, and traditional media. We build audiences that convert to lifelong fans.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-file-earmark-music"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Publishing & Licensing</h5>
+                    <p class="text-muted small mt-2">Protect and monetize your catalog. Sync licensing for film, TV, ads, and games — your music working for you 24/7.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="service-card">
+                    <div class="service-icon"><i class="bi bi-people-fill"></i></div>
+                    <h5 class="fw-bold brand-font mt-3">Brand Partnerships</h5>
+                    <p class="text-muted small mt-2">We connect artists with brands that align with their identity — from fashion collabs to tech endorsements and beyond.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MEDIA / VIDEO SECTION ========== -->
+<section id="media" class="section-darker py-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8" data-aos="fade-up">
+                <span class="section-eyebrow">Visual Universe</span>
+                <h2 class="section-title brand-font">Media <span class="accent-color">Hub</span></h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Featured Video -->
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="video-card video-card-featured">
+                    <div class="video-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=900" alt="Vandal X - Signal Lost (Official Video)" class="img-fluid w-100" loading="lazy" decoding="async">
+                        <div class="video-play-overlay" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <div class="video-play-btn"><i class="bi bi-play-fill"></i></div>
+                        </div>
+                        <div class="video-badge">Official Video</div>
+                    </div>
+                    <div class="video-meta p-3">
+                        <h5 class="fw-bold mb-1">Vandal X — "Signal Lost" (Official Music Video)</h5>
+                        <p class="small text-muted mb-0">12.4M Views &nbsp;·&nbsp; May 2026</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Side Videos -->
+            <div class="col-lg-4 d-flex flex-column gap-4">
+                <div class="video-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="video-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=500" alt="Behind The Scenes" class="img-fluid w-100" loading="lazy" decoding="async">
+                        <div class="video-play-overlay" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <div class="video-play-btn video-play-btn-sm"><i class="bi bi-play-fill"></i></div>
+                        </div>
+                        <div class="video-badge">BTS</div>
+                    </div>
+                    <div class="video-meta p-2">
+                        <h6 class="fw-bold mb-0 small">Behind The Scenes: Signal Lost</h6>
+                        <p class="x-small text-muted mb-0">3.1M Views</p>
+                    </div>
+                </div>
+                <div class="video-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="video-thumb-wrap">
+                        <img src="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?q=80&w=500" alt="Luna Eclipse Live" class="img-fluid w-100" loading="lazy" decoding="async">
+                        <div class="video-play-overlay" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                            <div class="video-play-btn video-play-btn-sm"><i class="bi bi-play-fill"></i></div>
+                        </div>
+                        <div class="video-badge">Live</div>
+                    </div>
+                    <div class="video-meta p-2">
+                        <h6 class="fw-bold mb-0 small">Luna Eclipse — Live at Off-Limits Fest</h6>
+                        <p class="x-small text-muted mb-0">5.7M Views</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-label="Video Player">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content bg-black border-0">
+                    <div class="modal-header border-0 pb-0">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe id="videoFrame" src="" allowfullscreen title="Video Player"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== MERCH SECTION ========== -->
+<section id="merch" class="section-dark py-section">
+    <div class="container">
+        <div class="row align-items-end mb-5">
+            <div class="col-lg-7" data-aos="fade-up">
+                <span class="section-eyebrow">Official Store</span>
+                <h2 class="section-title brand-font">Off-Limits <span class="accent-color">Merch</span></h2>
+            </div>
+            <div class="col-lg-5 text-lg-end" data-aos="fade-up" data-aos-delay="100">
+                <a href="store.html" class="btn btn-outline-accent px-4 py-2 text-uppercase fw-bold">Shop All</a>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+                <div class="merch-card">
+                    <div class="merch-img-wrap">
+                        <img src="assets/images/cloth.jpg" alt="OL Classic Tee" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="merch-overlay">
+                            <a href="store.html?item=ol-classic-tee" class="btn btn-accent btn-sm text-uppercase fw-bold">Quick Add</a>
+                        </div>
+                        <span class="merch-badge">New</span>
+                    </div>
+                    <div class="merch-info mt-3">
+                        <h6 class="fw-bold mb-0">OL Classic Tee</h6>
+                        <p class="small accent-color fw-semibold mb-0">$35.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="80">
+                <div class="merch-card">
+                    <div class="merch-img-wrap">
+                        <img src="assets/images/cloths.jpg" alt="Signal Lost Hoodie" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="merch-overlay">
+                            <a href="store.html?item=signal-lost-hoodie" class="btn btn-accent btn-sm text-uppercase fw-bold">Quick Add</a>
+                        </div>
+                        <span class="merch-badge merch-badge-hot">Hot</span>
+                    </div>
+                    <div class="merch-info mt-3">
+                        <h6 class="fw-bold mb-0">Signal Lost Hoodie</h6>
+                        <p class="small accent-color fw-semibold mb-0">$75.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="160">
+                <div class="merch-card">
+                    <div class="merch-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=500" alt="OL Cap" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="merch-overlay">
+                            <a href="store.html?item=ol-cap" class="btn btn-accent btn-sm text-uppercase fw-bold">Quick Add</a>
+                        </div>
+                    </div>
+                    <div class="merch-info mt-3">
+                        <h6 class="fw-bold mb-0">Off-Limits Cap</h6>
+                        <p class="small accent-color fw-semibold mb-0">$28.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="240">
+                <div class="merch-card">
+                    <div class="merch-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500" alt="OL Sneaker Collab" class="img-fluid" loading="lazy" decoding="async">
+                        <div class="merch-overlay">
+                            <a href="store.html?item=ol-sneaker" class="btn btn-accent btn-sm text-uppercase fw-bold">Quick Add</a>
+                        </div>
+                        <span class="merch-badge merch-badge-limited">Limited</span>
+                    </div>
+                    <div class="merch-info mt-3">
+                        <h6 class="fw-bold mb-0">OL x Collab Sneaker</h6>
+                        <p class="small accent-color fw-semibold mb-0">$120.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== EVENTS SECTION ========== -->
+<section id="events" class="section-darker py-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8" data-aos="fade-up">
+                <span class="section-eyebrow">Live Experience</span>
+                <h2 class="section-title brand-font">Upcoming <span class="accent-color">Events</span></h2>
+            </div>
+        </div>
+
+        <div class="events-list" data-aos="fade-up">
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">14</span>
+                    <span class="event-month">JUN</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Off-Limits Fest 2026</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>Abuja, Nigeria &nbsp;·&nbsp; International Conference Centre</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Vandal X, Kxng Dayo, Soleil + more</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-accent btn-sm text-uppercase fw-bold px-4">Get Tickets</a>
+                </div>
+            </div>
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">22</span>
+                    <span class="event-month">JUL</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Luna Eclipse — Neon Pulse Tour</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>London, UK &nbsp;·&nbsp; O2 Academy Brixton</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Luna Eclipse</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-accent btn-sm text-uppercase fw-bold px-4">Get Tickets</a>
+                </div>
+            </div>
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">09</span>
+                    <span class="event-month">AUG</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Aria Vance — Midnight Sessions</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>New York, USA &nbsp;·&nbsp; Brooklyn Steel</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Aria Vance</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-accent btn-sm text-uppercase fw-bold px-4">Get Tickets</a>
+                </div>
+            </div>
+            <div class="event-row">
+                <div class="event-date brand-font">
+                    <span class="event-day">30</span>
+                    <span class="event-month">SEP</span>
+                </div>
+                <div class="event-info">
+                    <h5 class="fw-bold mb-1">Phantom — Dark Matter Live</h5>
+                    <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1 accent-color"></i>Toronto, Canada &nbsp;·&nbsp; Rebel Entertainment Complex</p>
+                </div>
+                <div class="event-artist">
+                    <p class="small text-muted mb-0">Phantom</p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn btn-outline-accent btn-sm text-uppercase fw-bold px-4">Sold Out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== DEMO SUBMISSION ========== -->
+<section id="demo" class="section-dark py-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <span class="section-eyebrow">Open Submissions</span>
+                <h2 class="section-title brand-font">Submit Your <span class="accent-color">Demo</span></h2>
+                <p class="section-body mt-4">Think you have what it takes? Off-Limits Entertainment is always listening. Submit your demo and our A&R team will review every submission within 30 days.</p>
+                <ul class="demo-checklist mt-4">
+                    <li><i class="bi bi-check-circle-fill accent-color me-2"></i>All genres considered</li>
+                    <li><i class="bi bi-check-circle-fill accent-color me-2"></i>Response within 30 days</li>
+                    <li><i class="bi bi-check-circle-fill accent-color me-2"></i>No exclusive rights required to submit</li>
+                    <li><i class="bi bi-check-circle-fill accent-color me-2"></i>Direct A&R team review</li>
+                </ul>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+                <div class="demo-form-card">
+                    <form id="demoForm" method="POST" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Artist / Stage Name *</label>
+                                <input type="text" class="form-control form-control-dark" name="artist_name" required placeholder="Your artist name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Real Name *</label>
+                                <input type="text" class="form-control form-control-dark" name="real_name" required placeholder="Full legal name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Email Address *</label>
+                                <input type="email" class="form-control form-control-dark" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Phone Number</label>
+                                <input type="tel" class="form-control form-control-dark" name="phone" placeholder="+1 000 000 0000">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Genre *</label>
+                                <select class="form-select form-control-dark" name="genre" required>
+                                    <option value="" disabled selected>Select genre</option>
+                                    <option>Hip-Hop / Rap</option>
+                                    <option>R&amp;B / Soul</option>
+                                    <option>Electronic / EDM</option>
+                                    <option>Afrobeats / Afropop</option>
+                                    <option>Pop</option>
+                                    <option>Alternative</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Country *</label>
+                                <input type="text" class="form-control form-control-dark" name="country" required placeholder="Your country">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-uppercase fw-semibold">Streaming / SoundCloud Link *</label>
+                                <input type="url" class="form-control form-control-dark" name="stream_link" required placeholder="https://soundcloud.com/yourtrack">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-uppercase fw-semibold">Upload Demo (MP3/WAV, max 20MB)</label>
+                                <input type="file" class="form-control form-control-dark" name="demo_file" accept=".mp3,.wav,.aac">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-uppercase fw-semibold">Tell Us About Yourself</label>
+                                <textarea class="form-control form-control-dark" name="bio" rows="3" placeholder="Your story, influences, goals..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="termsCheck" name="terms" required>
+                                    <label class="form-check-label small text-muted" for="termsCheck">
+                                        I agree to the <a href="terms.html" class="accent-color">Terms & Conditions</a> and confirm this is my original work.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-accent w-100 py-3 text-uppercase fw-bold fs-6">
+                                    <i class="bi bi-send me-2"></i>Submit Demo
+                                </button>
+                            </div>
+                            <div id="demoFormMsg" class="col-12 d-none"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== PRESS / BLOG ========== -->
+<section class="section-darker py-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8" data-aos="fade-up">
+                <span class="section-eyebrow">In The Press</span>
+                <h2 class="section-title brand-font">News & <span class="accent-color">Culture</span></h2>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=600" alt="Blog Post" class="img-fluid" loading="lazy" decoding="async">
+                        <span class="blog-category">Industry</span>
+                    </div>
+                    <div class="blog-body p-4">
+                        <p class="x-small text-muted mb-2">May 10, 2026</p>
+                        <h5 class="fw-bold mb-2">How Off-Limits Is Rewriting the Rules of Independent Music</h5>
+                        <p class="small text-muted">Billboard explores how our model is disrupting the traditional label structure and empowering artists to own their futures.</p>
+                        <a href="blog.html?id=1" class="btn-text-accent small text-uppercase fw-bold">Read More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=600" alt="Blog Post" class="img-fluid" loading="lazy" decoding="async">
+                        <span class="blog-category">Artist Spotlight</span>
+                    </div>
+                    <div class="blog-body p-4">
+                        <p class="x-small text-muted mb-2">Apr 28, 2026</p>
+                        <h5 class="fw-bold mb-2">Kxng Dayo: From Lagos to the World Stage</h5>
+                        <p class="small text-muted">The Afrobeats sensation talks about his journey, his debut album, and what it means to represent Africa on a global platform.</p>
+                        <a href="blog.html?id=2" class="btn-text-accent small text-uppercase fw-bold">Read More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-card">
+                    <div class="blog-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600" alt="Blog Post" class="img-fluid" loading="lazy" decoding="async">
+                        <span class="blog-category">Production</span>
+                    </div>
+                    <div class="blog-body p-4">
+                        <p class="x-small text-muted mb-2">Apr 15, 2026</p>
+                        <h5 class="fw-bold mb-2">Inside the Off-Limits Studio: Where Hits Are Born</h5>
+                        <p class="small text-muted">A rare look inside our state-of-the-art production facility and the team behind some of 2026's biggest records.</p>
+                        <a href="blog.html?id=3" class="btn-text-accent small text-uppercase fw-bold">Read More <i class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT SECTION ========== -->
+<section id="contact" class="section-dark py-section">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5" data-aos="fade-right">
+                <span class="section-eyebrow">Get In Touch</span>
+                <h2 class="section-title brand-font">Contact <span class="accent-color">Us</span></h2>
+                <p class="section-body mt-4">Whether you're an artist, brand, journalist, or fan — we want to hear from you. Reach out and let's build something extraordinary.</p>
+
+                <div class="contact-info mt-5">
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div>
+                            <p class="small text-muted mb-0 text-uppercase fw-semibold">Headquarters</p>
+                            <span class="contact-link">Plot 1234, Wuse Zone 5, Abuja, FCT, Nigeria</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+                        <div>
+                            <p class="small text-muted mb-0 text-uppercase fw-semibold">General Inquiries</p>
+                            <a href="mailto:info@offlimitsentertainment.com" class="contact-link">info@offlimitsentertainment.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="bi bi-music-note-beamed"></i></div>
+                        <div>
+                            <p class="small text-muted mb-0 text-uppercase fw-semibold">A&R / Demo Submissions</p>
+                            <a href="mailto:ar@offlimitsentertainment.com" class="contact-link">ar@offlimitsentertainment.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="bi bi-briefcase-fill"></i></div>
+                        <div>
+                            <p class="small text-muted mb-0 text-uppercase fw-semibold">Business & Partnerships</p>
+                            <a href="mailto:business@offlimitsentertainment.com" class="contact-link">business@offlimitsentertainment.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+                        <div>
+                            <p class="small text-muted mb-0 text-uppercase fw-semibold">Phone</p>
+                            <a href="tel:+2348000000000" class="contact-link">+234 800 000 0000</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links mt-5">
+                    <a href="#" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-btn" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="social-btn" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                    <a href="#" class="social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    <a href="#" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+                <div class="contact-form-card">
+                    <form id="contactForm" method="POST" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Full Name *</label>
+                                <input type="text" class="form-control form-control-dark" name="name" required placeholder="Your name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-uppercase fw-semibold">Email *</label>
+                                <input type="email" class="form-control form-control-dark" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-uppercase fw-semibold">Subject *</label>
+                                <select class="form-select form-control-dark" name="subject" required>
+                                    <option value="" disabled selected>Select a subject</option>
+                                    <option>General Inquiry</option>
+                                    <option>Artist Management</option>
+                                    <option>Brand Partnership</option>
+                                    <option>Press / Media</option>
+                                    <option>Booking / Events</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small text-uppercase fw-semibold">Message *</label>
+                                <textarea class="form-control form-control-dark" name="message" rows="5" required placeholder="Tell us what's on your mind..."></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-accent w-100 py-3 text-uppercase fw-bold fs-6">
+                                    <i class="bi bi-send me-2"></i>Send Message
+                                </button>
+                            </div>
+                            <div id="contactFormMsg" class="col-12 d-none"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== NEWSLETTER ========== -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-inner" data-aos="fade-up">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <h3 class="brand-font fw-bold mb-1">Stay In The Loop</h3>
+                    <p class="text-muted mb-0">New drops, exclusive content, and early access — straight to your inbox.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="newsletter-form d-flex gap-2" method="POST">
+                        <input type="email" class="form-control form-control-dark flex-grow-1" name="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-accent px-4 text-uppercase fw-bold">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-5 py-5">
+            <div class="col-lg-4">
+                <a class="d-flex align-items-center gap-2 text-white text-decoration-none" href="index.html">
+                    <img src="assets/images/Logo.jpg" alt="Off-Limits Entertainment" class="footer-logo">
+                    <span class="brand-font fw-bold fs-3">OFF<span class="accent-color">-</span>LIMITS<span class="accent-color">.</span></span>
+                </a>
+                <p class="small text-muted col-10">Based in Abuja, Nigeria. A full-scale media engine, artist incubator, and immersive lifestyle brand. We don't follow rules — we write them.</p>
+                <div class="social-links mt-4">
+                    <a href="#" class="social-btn social-btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="social-btn social-btn-sm" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="social-btn social-btn-sm" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" class="social-btn social-btn-sm" aria-label="Spotify"><i class="bi bi-spotify"></i></a>
+                    <a href="#" class="social-btn social-btn-sm" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="text-uppercase fw-bold small mb-4 accent-color">Company</h6>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="coming-soon.html?page=Careers">Careers</a></li>
+                    <li><a href="coming-soon.html?page=Press+Kit">Press Kit</a></li>
+                    <li><a href="terms.html">Terms</a></li>
+                    <li><a href="privacy.html">Privacy</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="text-uppercase fw-bold small mb-4 accent-color">Artists</h6>
+                <ul class="footer-links">
+                    <li><a href="artist.html?id=vandal-x">Vandal X</a></li>
+                    <li><a href="artist.html?id=luna-eclipse">Luna Eclipse</a></li>
+                    <li><a href="artist.html?id=aria-vance">Aria Vance</a></li>
+                    <li><a href="artist.html?id=kxng-dayo">Kxng Dayo</a></li>
+                    <li><a href="artist.html?id=phantom">Phantom</a></li>
+                    <li><a href="roster.html">View All</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="text-uppercase fw-bold small mb-4 accent-color">Music</h6>
+                <ul class="footer-links">
+                    <li><a href="#releases">New Releases</a></li>
+                    <li><a href="coming-soon.html?page=Full+Catalog">Full Catalog</a></li>
+                    <li><a href="coming-soon.html?page=Playlists">Playlists</a></li>
+                    <li><a href="#demo">Submit Demo</a></li>
+                    <li><a href="coming-soon.html?page=Licensing">Licensing</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="text-uppercase fw-bold small mb-4 accent-color">More</h6>
+                <ul class="footer-links">
+                    <li><a href="store.html">Merch Store</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="portal/login.html">Artist Portal</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="small text-muted mb-0">&copy; 2026 Off-Limits Entertainment. All Rights Reserved. Abuja, Nigeria.</p>
+            <p class="small text-muted mb-0">Built with passion. Powered by independence.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+<!-- Bootstrap Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/supabase-client.js"></script>
+<!-- Custom JS -->
+<script src="assets/js/main.js"></script>
+</body>
+</html>

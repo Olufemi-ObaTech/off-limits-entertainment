@@ -1,0 +1,50 @@
+/* ============================================================
+   OFF-LIMITS ENTERTAINMENT — Shared styles for secondary pages
+   (terms, privacy, roster, artist, store, blog, coming-soon)
+   ============================================================ */
+.page-hero {
+    padding: 160px 0 60px;
+    background: var(--bg-darker);
+    border-bottom: 1px solid var(--border-subtle);
+}
+.page-hero .section-title { margin-bottom: 0.5rem; }
+.legal-content h2 {
+    font-family: var(--font-brand);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin: 2.5rem 0 1rem;
+}
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p, .legal-content li { color: #bbb; line-height: 1.8; }
+.legal-content ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+.legal-content a { color: var(--accent); }
+
+.coming-soon-wrap {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 1.5rem 4rem;
+}
+.coming-soon-icon { font-size: 3rem; color: var(--accent); margin-bottom: 1.5rem; }
+
+.artist-profile-hero {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+}
+.artist-profile-photo {
+    width: 220px; height: 220px;
+    object-fit: cover;
+    border: 1px solid var(--border-subtle);
+}
+@media (max-width: 575.98px) {
+    .artist-profile-hero { flex-direction: column; text-align: center; }
+    .artist-profile-photo { width: 160px; height: 160px; }
+}
+
+.state-msg { color: var(--text-muted); padding: 2rem 0; }
